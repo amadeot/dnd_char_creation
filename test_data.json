@@ -1,0 +1,33 @@
+[{
+  "name":String,
+  "char_class":String,
+  "char_race":String,
+  "background":String,
+  "alignment":String,
+  "proficiencies":[String],
+  "ability_scores":{
+    "str":Number,
+    "dex":Number,
+    "con":Number,
+    "int":Number,
+    "wis":Number,
+    "cha":Number
+  },
+  "armor_class":Number,
+  "initiave":Number,
+  "speed":Number,
+  "hit_point_max":Number,
+  "features_and_traits":[String],
+  "proficiencies_and_languages":[String],
+  "attacks_and_spellcasting":[Object],
+  "equipment":[String],
+  "cantrips":[String],
+  "first_level_spells":[String],
+  "spellcasting_ability":Number,
+  "spell_save_dc":Number,
+  "spell_attack_bonus":Number
+
+}]
+
+
+

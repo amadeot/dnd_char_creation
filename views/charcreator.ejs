@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="DnDApp">
+<head>
+  <title>Make a Character</title>
+  <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/app.js"></script>
+  <script type="text/javascript" src="/chars_controller.js"></script>
+</head>
+<body>
+  <div ng-controller="CharsController as chars" >
+    <h1>Race</h1>
+    <select ng-model="chars.selectedRace">
+      <option ng-repeat="race in chars.races" value="{{race.sName}}">
+        {{race.fName}}
+      </option>
+    </select>
+    <p>Selected race: {{chars.selectedRace}}</p>
+    <div ng-switch on="chars.selectedRace">
+        <div ng-include="'/partials/races'"></div>
+    </div>
+    <h1>Class</h1>
+    <select ng-model="chars.selectedCharClass">
+      <option ng-repeat="charClass in chars.charClasses">
+        {{charClass}}
+      </option>
+    </select>
+    <p>Selected Class: {{chars.selectedCharClass}}</p>
+    <div ng-switch on="chars.selectedCharClass">
+      <div ng-include="'/partials/charClasses/'+{{chars.selectedCharClass}}"></div>
+    </div>
+      
+  </div>
+
+</body>
+</html>
