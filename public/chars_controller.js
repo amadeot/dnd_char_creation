@@ -43,5 +43,13 @@ function CharController () {
     "Sorcerer",
     "Warlock",
     "Wizard"
+  ];
+  char.attrNames = [
+    "str",
+    "dex",
+    "con",
+    "int",
+    "wis",
+    "cha"
   ]
 }

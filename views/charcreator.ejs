@@ -6,31 +6,46 @@
   <script type="text/javascript" src="/angular/angular.min.js"></script>
   <script type="text/javascript" src="/app.js"></script>
   <script type="text/javascript" src="/chars_controller.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
 </head>
 <body>
   <div ng-controller="CharsController as chars" >
-    <h1>Race</h1>
-    <select ng-model="chars.selectedRace">
-      <option ng-repeat="race in chars.races" value="{{race.sName}}">
-        {{race.fName}}
-      </option>
-    </select>
-    <p>Selected race: {{chars.selectedRace}}</p>
-    <div ng-switch on="chars.selectedRace">
-        <div ng-include="'/partials/races'"></div>
-    </div>
-    <h1>Class</h1>
-    <select ng-model="chars.selectedCharClass">
-      <option ng-repeat="charClass in chars.charClasses">
-        {{charClass}}
-      </option>
-    </select>
-    <p>Selected Class: {{chars.selectedCharClass}}</p>
-    <div ng-switch on="chars.selectedCharClass">
-      <div ng-include="'/partials/charClasses/'+{{chars.selectedCharClass}}"></div>
-    </div>
-      
-  </div>
+    <form method="post" action="/create">
+      <div class="race-container">
+        <h1>Race</h1>
+        <select ng-model="chars.selectedRace">
+          <option ng-repeat="race in chars.races" value="{{race.sName}}">
+            {{race.fName}}
+          </option>
+        </select>
+        <p>Selected race: {{chars.selectedRace}}</p>
+        <div ng-switch on="chars.selectedRace">
+            <div ng-include="'/partials/races'"></div>
+        </div>
+      </div>
+      <div class="class-container">
+        <h1>Class</h1>
+        <select ng-model="chars.selectedCharClass">
+          <option ng-repeat="charClass in chars.charClasses">
+            {{charClass}}
+          </option>
+        </select>
+        <p>Selected Class: {{chars.selectedCharClass}}</p>
+        <div ng-switch on="chars.selectedCharClass">
+          <div ng-include="'/partials/charClasses'"></div>
+     </div>
+      </div>
+      <div class="ability-score-container">
+        <h1>Ability Scores</h1>
+        <button id="roll-dice">Roll Dice</button>
+        <div class="dice-container">
+          
+        </div>
+        
 
+      </div>
+      <input type="submit" value="Create Character!">     
+    </form>
+  </div>
 </body>
 </html>

@@ -16,5 +16,9 @@ app.get('/partials/races', function(req, res){
   res.render('partials/races')
 })
 
+app.get('/partials/charClasses', function(req, res){
+  res.render('partials/charClasses')
+})
+
 
 app.listen(process.env.PORT || 3000);
