@@ -9,43 +9,95 @@
   <script type="text/javascript" src="/main.js"></script>
 </head>
 <body>
-  <div ng-controller="CharsController as chars" >
+  <div ng-controller="CharsController as ctrl" >
     <form method="post" action="/create">
       <div class="race-container">
         <h1>Race</h1>
-        <select ng-model="chars.selectedRace">
-          <option ng-repeat="race in chars.races" value="{{race.sName}}">
+        <select ng-model="ctrl.selectedRace">
+          <option ng-repeat="race in ctrl.races" value="{{race.sName}}">
             {{race.fName}}
           </option>
         </select>
-        <p>Selected race: {{chars.selectedRace}}</p>
-        <div ng-switch on="chars.selectedRace">
-            <div ng-include="'/partials/races'"></div>
+        <p>Selected race: {{ctrl.selectedRace}}</p>
+        <div ng-switch on="ctrl.selectedRace">
+          <div ng-include="'/partials/races'"></div>
         </div>
       </div>
       <div class="class-container">
         <h1>Class</h1>
-        <select ng-model="chars.selectedCharClass">
-          <option ng-repeat="charClass in chars.charClasses">
-            {{charClass}}
-          </option>
+        <select 
+          ng-options="character as character.name for character in ctrl.charClasses track by character.name"
+          ng-model="ctrl.selectedCharClass"
+          ng-change="ctrl.showSelected()"
+          >
         </select>
-        <p>Selected Class: {{chars.selectedCharClass}}</p>
-        <div ng-switch on="chars.selectedCharClass">
-          <div ng-include="'/partials/charClasses'"></div>
-     </div>
+        <p>Selected Class: {{ctrl.selectedCharClass.name}}</p>
+          <div ng-include="ctrl.selectedCharClass.path"></div>
       </div>
       <div class="ability-score-container">
         <h1>Ability Scores</h1>
         <button id="roll-dice">Roll Dice</button>
         <div class="dice-container">
-          
+          <div class="first-die-container">
+            <select ng-model="ctrl.firstAttrSelection">
+              <option ng-repeat="attr in ctrl.attrNames">
+                {{attr}}
+              </option>
+            </select>
+            <input type="number" class="first-die" name="{{attr}}">
+          <div class="second-die-container">
+            <select ng-model="ctrl.secondAttrSelection">
+              <option ng-repeat="attr in ctrl.attrNames">
+                {{attr}}
+              </option>
+            </select>
+            <input type="number" class="second-die" name="{{attr}}">
+          <div class="third-die-container">
+            <select ng-model="ctrl.thirdAttrSelection">
+              <option ng-repeat="attr in ctrl.attrNames">
+                {{attr}}
+              </option>
+            </select>
+            <input type="number" class="third-die" name="{{attr}}">
+          <div class="fourth-die-container">
+            <select ng-model="ctrl.fourthAttrSelection">
+              <option ng-repeat="attr in ctrl.attrNames">
+                {{attr}}
+              </option>
+            </select>
+            <input type="number" class="fourth-die" name="{{attr}}">
+          <div class="fifth-die-container">
+            <select ng-model="ctrl.fifthAttrSelection">
+              <option ng-repeat="attr in ctrl.attrNames">
+                {{attr}}
+              </option>
+            </select>
+            <input type="number" class="fifth-die" name="{{attr}}">
+          <div class="sixth-die-container">
+            <select ng-model="ctrl.sixthAttrSelection">
+              <option ng-repeat="attr in ctrl.attrNames">
+                {{attr}}
+              </option>
+            </select>
+            <input type="number" class="sixth-die" name="{{attr}}"> 
+          </div>
+        </div> <!--dice container-->
+        <div class="char-background-container">
+          <h1>Background</h1>
+          <select ng-model="ctrl.selectedBackground">
+            <option ng-repeat="bground in ctrl.charBackgrounds">
+              {{bground}}
+            </option>
+          </select>
+          <p>Selected Background: {{ctrl.selectedBackground}}</p>
+          <div ng-switch on="ctrl.selectedBackground">
+              <!-- <div ng-include="'/partials/backgrounds'"></div> -->
+          </div>
         </div>
-        
 
-      </div>
+
       <input type="submit" value="Create Character!">     
     </form>
-  </div>
+  </div> <!--ng-controller-->
 </body>
 </html>

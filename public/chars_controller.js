@@ -31,19 +31,26 @@ function CharController () {
     "White" 
   ];
   char.charClasses = [
-    "Barbarian",
-    "Bard",
-    "Cleric",
-    "Druid",
-    "Fighter",
-    "Monk",
-    "Paladin",
-    "Ranger",
-    "Rogue",
-    "Sorcerer",
-    "Warlock",
-    "Wizard"
+    {name:"Barbarian", path:"/partials/charClasses/barbarian", possible_skills:["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]},
+    {name:"Bard", path:"/partials/charClasses/barbarian"},
+    {name:"Cleric", path:"/partials/charClasses/barbarian"},
+    {name:"Druid", path:"/partials/charClasses/barbarian"},
+    {name:"Fighter", path:"/partials/charClasses/barbarian"},
+    {name:"Monk", path:"/partials/charClasses/barbarian"},
+    {name:"Paladin", path:"/partials/charClasses/barbarian"},
+    {name:"Ranger", path:"/partials/charClasses/barbarian"},
+    {name:"Rogue", path:"/partials/charClasses/barbarian"},
+    {name:"Sorcerer", path:"/partials/charClasses/barbarian"},
+    {name:"Warlock", path:"/partials/charClasses/barbarian"},
+    {name:"Wizard", path:"/partials/charClasses/barbarian"}
   ];
+  char.showSelected = function(){
+    console.log('select changed');
+    console.log(char.selectedCharClass)
+  }
+  char.selectedCharClass = {
+    name: "", path: ""
+  };
   char.attrNames = [
     "str",
     "dex",
@@ -51,5 +58,19 @@ function CharController () {
     "int",
     "wis",
     "cha"
-  ]
+  ];
+  char.charBackgrounds = [
+    "Acolyte",
+    "Charlatan",
+    "Criminal",
+    "Entertainer",
+    "Folk Hero",
+    "Guild Artisan",
+    "Hermit",
+    "Noble",
+    "Outlander",
+    "Sage",
+    "Sailor",
+    "Soldier",
+    "Urchin"]
 }

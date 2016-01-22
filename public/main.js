@@ -23,5 +23,7 @@ $(document).ready(function(){
       rollDie()
     }
     console.log(allRolls)
+    $(".first-die").css(
+      "value", allRolls[0])
   })
 })

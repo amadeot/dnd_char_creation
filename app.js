@@ -16,8 +16,8 @@ app.get('/partials/races', function(req, res){
   res.render('partials/races')
 })
 
-app.get('/partials/charClasses', function(req, res){
-  res.render('partials/charClasses')
+app.get('/partials/charClasses/:name', function(req, res){
+  res.render('partials/charClasses/'+req.params.name)
 })
 
 
