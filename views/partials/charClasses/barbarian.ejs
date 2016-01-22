@@ -1,16 +1,16 @@
 <p>As a Barbarian, you start with 12 hit points.
 
 You are proficient in light armor, medium armor, and shields.</p>
-<input type="hidden" name="char-arm-prof" value="light armor, medium armor, shields">
+<input type="hidden" name="class-arm-prof" value="light armor, medium armor, shields">
 <p>You are proficient with simple and martial weapons.</p>
-<input type="hidden" name="char-wep-prof" value="simple weapons, martial weapons">
+<input type="hidden" name="class-wep-prof" value="simple weapons, martial weapons">
 
 <p>You are proficient in saving throws of strength and constitution.</p>
-<input type="hidden" name="char-sav-skills" value="str, con">
+<input type="hidden" name="class-sav-skills" value="str, con">
 
 <p>Choose two of the following skills</p>
 <select 
-  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills"
+  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
   ng-model="ctrl.charSkillsSelected"
   multiple>
 </select>

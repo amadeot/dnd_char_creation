@@ -11,6 +11,8 @@
 <body>
   <div ng-controller="CharsController as ctrl" >
     <form method="post" action="/create">
+
+
       <div class="race-container">
         <h1>Race</h1>
         <select ng-model="ctrl.selectedRace">
@@ -23,6 +25,9 @@
           <div ng-include="'/partials/races'"></div>
         </div>
       </div>
+
+
+
       <div class="class-container">
         <h1>Class</h1>
         <select 
@@ -34,54 +39,18 @@
         <p>Selected Class: {{ctrl.selectedCharClass.name}}</p>
           <div ng-include="ctrl.selectedCharClass.path"></div>
       </div>
+
+
+
       <div class="ability-score-container">
         <h1>Ability Scores</h1>
         <button id="roll-dice">Roll Dice</button>
         <div class="dice-container">
-          <div class="first-die-container">
-            <select ng-model="ctrl.firstAttrSelection">
-              <option ng-repeat="attr in ctrl.attrNames">
-                {{attr}}
-              </option>
-            </select>
-            <input type="number" class="first-die" name="{{attr}}">
-          <div class="second-die-container">
-            <select ng-model="ctrl.secondAttrSelection">
-              <option ng-repeat="attr in ctrl.attrNames">
-                {{attr}}
-              </option>
-            </select>
-            <input type="number" class="second-die" name="{{attr}}">
-          <div class="third-die-container">
-            <select ng-model="ctrl.thirdAttrSelection">
-              <option ng-repeat="attr in ctrl.attrNames">
-                {{attr}}
-              </option>
-            </select>
-            <input type="number" class="third-die" name="{{attr}}">
-          <div class="fourth-die-container">
-            <select ng-model="ctrl.fourthAttrSelection">
-              <option ng-repeat="attr in ctrl.attrNames">
-                {{attr}}
-              </option>
-            </select>
-            <input type="number" class="fourth-die" name="{{attr}}">
-          <div class="fifth-die-container">
-            <select ng-model="ctrl.fifthAttrSelection">
-              <option ng-repeat="attr in ctrl.attrNames">
-                {{attr}}
-              </option>
-            </select>
-            <input type="number" class="fifth-die" name="{{attr}}">
-          <div class="sixth-die-container">
-            <select ng-model="ctrl.sixthAttrSelection">
-              <option ng-repeat="attr in ctrl.attrNames">
-                {{attr}}
-              </option>
-            </select>
-            <input type="number" class="sixth-die" name="{{attr}}"> 
-          </div>
-        </div> <!--dice container-->
+        
+        </div>
+
+
+
         <div class="char-background-container">
           <h1>Background</h1>
           <select ng-model="ctrl.selectedBackground">

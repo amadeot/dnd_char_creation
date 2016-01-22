@@ -18,12 +18,12 @@ rollDie = function(){
 $(document).ready(function(){
   $("#roll-dice").click(function(event){
     event.preventDefault();
+    $(".dice-container").empty()
     allRolls = []
     for(x=0;x<6;x++){
       rollDie()
+      $(".dice-container").append("<p>"+allRolls[x]+"</p>")
     }
     console.log(allRolls)
-    $(".first-die").css(
-      "value", allRolls[0])
   })
 })

@@ -32,17 +32,17 @@ function CharController () {
   ];
   char.charClasses = [
     {name:"Barbarian", path:"/partials/charClasses/barbarian", possible_skills:["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]},
-    {name:"Bard", path:"/partials/charClasses/barbarian"},
-    {name:"Cleric", path:"/partials/charClasses/barbarian"},
-    {name:"Druid", path:"/partials/charClasses/barbarian"},
-    {name:"Fighter", path:"/partials/charClasses/barbarian"},
-    {name:"Monk", path:"/partials/charClasses/barbarian"},
-    {name:"Paladin", path:"/partials/charClasses/barbarian"},
-    {name:"Ranger", path:"/partials/charClasses/barbarian"},
-    {name:"Rogue", path:"/partials/charClasses/barbarian"},
-    {name:"Sorcerer", path:"/partials/charClasses/barbarian"},
-    {name:"Warlock", path:"/partials/charClasses/barbarian"},
-    {name:"Wizard", path:"/partials/charClasses/barbarian"}
+    {name:"Bard", path:"/partials/charClasses/bard"},
+    {name:"Cleric", path:"/partials/charClasses/cleric"},
+    {name:"Druid", path:"/partials/charClasses/druid"},
+    {name:"Fighter", path:"/partials/charClasses/fighter"},
+    {name:"Monk", path:"/partials/charClasses/monk"},
+    {name:"Paladin", path:"/partials/charClasses/paladin"},
+    {name:"Ranger", path:"/partials/charClasses/ranger"},
+    {name:"Rogue", path:"/partials/charClasses/rogue"},
+    {name:"Sorcerer", path:"/partials/charClasses/sorcerer"},
+    {name:"Warlock", path:"/partials/charClasses/warlock"},
+    {name:"Wizard", path:"/partials/charClasses/wizard"}
   ];
   char.showSelected = function(){
     console.log('select changed');
