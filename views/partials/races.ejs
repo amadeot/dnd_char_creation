@@ -1,30 +1,39 @@
-<div ng-switch-when="hill-dwarf">
+<div ng-switch-when="hill_dwarf">
   <p>I AM HILL DWARF</p>
-  <input type="hidden" name="race" value="hill-dwarf">
+  <input type="hidden" name="race" value="hill_dwarf">
+  <p>Hill Dwaves get +2 constitution and +1 Wisdom</p>
+  <input type="hidden" name="racAbilBon[b1][attr]" value="con">
+  <input type="hidden" name="racAbilBon[b1][bonus]" value=2>
+  <input type="hidden" name="racAbilBon[b2][attr]" value="wis">
+  <input type="hidden" name="racAbilBon[b2][bonus]" value=1>
+  <p>Hill Dwarves Have a walking speed of 25 feet</p>
+  <input type="hidden" name="speed" value="25">
+  <p>Their speed is not reduced by wearing heavy armor</p>
+  <input type="hidden" name="racFeatu[textOnly]" value="Speed not reduced by heavy armor">
 </div>
-<div ng-switch-when="mtn-dwarf">
+<div ng-switch-when="mtn_dwarf">
   <p>I AM mtn DWARF</p>
-  <input type="hidden" name="race" value="mtn-dwarf">
+  <input type="hidden" name="race" value="mtn_dwarf">
 </div>
-<div ng-switch-when="high-elf">
-  <p>I AM high-elf</p>
-  <input type="hidden" name="race" value="high-elf">
+<div ng-switch-when="high_elf">
+  <p>I AM high_elf</p>
+  <input type="hidden" name="race" value="high_elf">
 </div>
-<div ng-switch-when="wood-elf">
+<div ng-switch-when="wood_elf">
   <p>I AM wood elf</p>
-  <input type="hidden" name="race" value="wood-elf">
+  <input type="hidden" name="race" value="wood_elf">
 </div>
-<div ng-switch-when="dark-elf">
-  <p>I AM dark-elf</p>
-  <input type="hidden" name="race" value="dark-elf">
+<div ng-switch-when="dark_elf">
+  <p>I AM dark_elf</p>
+  <input type="hidden" name="race" value="dark_elf">
 </div>
-<div ng-switch-when="lf-halfling">
-  <p>I AM lf-halfling</p>
-  <input type="hidden" name="race" value="lf-halfling">
+<div ng-switch-when="lf_halfling">
+  <p>I AM lf_halfling</p>
+  <input type="hidden" name="race" value="lf_halfling">
 </div>
-<div ng-switch-when="stout-halfling">
-  <p>I AM stout-halfling</p>
-  <input type="hidden" name="race" value="stout-halfling">
+<div ng-switch-when="stout_halfling">
+  <p>I AM stout_halfling</p>
+  <input type="hidden" name="race" value="stout_halfling">
 </div>
 <div ng-switch-when="human">
   <p>I AM human</p>
@@ -32,30 +41,30 @@
 </div>
 <div ng-switch-when="dragonborn">
   <p>Choose a draconic ancestry</p>
-  <select ng-model="chars.selectedDragonbornType">
-    <option ng-repeat="dragonbornType in chars.dragonborn_types" value="{{dragonbornType}}">
+  <select ng-model="ctrl.selectedDragonbornType">
+    <option ng-repeat="dragonbornType in ctrl.dragonborn_types" value="{{dragonbornType}}">
         {{dragonbornType}}
     </option>
   </select>
-  <p>I AM a {{chars.selectedDragonbornType}} dragonborn</p>
+  <p>I AM a {{ctrl.selectedDragonbornType}} dragonborn</p>
   <input type="hidden" name="race" value="dragonborn">
-  <input type="hidden" name="dragonborn_type" value="{{chars.selectedDragonbornType}}">
+  <input type="hidden" name="dragonborn_type" value="{{ctrl.selectedDragonbornType}}">
 </div>
-<div ng-switch-when="forest-gnome">
-  <p>I AM forest-gnome</p>
-  <input type="hidden" name="race" value="forest-gnome">
+<div ng-switch-when="forest_gnome">
+  <p>I AM forest_gnome</p>
+  <input type="hidden" name="race" value="forest_gnome">
 </div>
-<div ng-switch-when="rock-gnome">
-  <p>I AM rock-gnome</p>
-  <input type="hidden" name="race" value="rock-gnome">
+<div ng-switch-when="rock_gnome">
+  <p>I AM rock_gnome</p>
+  <input type="hidden" name="race" value="rock_gnome">
 </div>
-<div ng-switch-when="half-elf">
-  <p>I AM half-elf</p>
-  <input type="hidden" name="race" value="half-elf">
+<div ng-switch-when="half_elf">
+  <p>I AM half_elf</p>
+  <input type="hidden" name="race" value="half_elf">
 </div>
-<div ng-switch-when="half-orc">
-  <p>I AM half-orc</p>
-  <input type="hidden" name="race" value="half-orc">
+<div ng-switch-when="half_orc">
+  <p>I AM half_orc</p>
+  <input type="hidden" name="race" value="half_orc">
 </div>
 <div ng-switch-when="tiefling">
   <p>I AM tiefling</p>

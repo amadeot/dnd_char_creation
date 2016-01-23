@@ -2,9 +2,9 @@
   "name":String,
   "char_class":String,
   "char_race":String,
-  "background":String,
+  "char_background":String,
   "alignment":String,
-  "proficiencies":[String],
+  "skill_proficiencies":[String],
   "ability_scores":{
     "str":Number,
     "dex":Number,

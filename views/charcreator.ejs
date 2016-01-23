@@ -11,18 +11,19 @@
 <body>
   <div ng-controller="CharsController as ctrl" >
     <form method="post" action="/create">
-
+      <input name="charName" type="text" placeholder="Character Name">
+      <input name="playerName" type="text" placeholder="Player Name">
+      <input name="playerEmail" type="text" placeholder="Player Email">
 
       <div class="race-container">
         <h1>Race</h1>
-        <select ng-model="ctrl.selectedRace">
-          <option ng-repeat="race in ctrl.races" value="{{race.sName}}">
-            {{race.fName}}
-          </option>
+        <select 
+          ng-options="race as race.fName for race in ctrl.races track by race.sName"
+          ng-model="ctrl.selectedRace">
         </select>
-        <p>Selected race: {{ctrl.selectedRace}}</p>
-        <div ng-switch on="ctrl.selectedRace">
-          <div ng-include="'/partials/races'"></div>
+        <p>Selected race: {{ctrl.selectedRace.fName}}</p>
+        <div ng-switch on="ctrl.selectedRace.sName">
+          <div ng-include="ctrl.selectedRace.path"></div>
         </div>
       </div>
 
@@ -45,22 +46,76 @@
       <div class="ability-score-container">
         <h1>Ability Scores</h1>
         <button id="roll-dice">Roll Dice</button>
-        <div class="dice-container">
-        
+        <div class="dice-container"></div>
+
+        <div class="str-selection">
+          <label for="str-selection">Select Roll for Strength: </label>
+          <select
+            id="str-selection"
+            name="selectedStr" 
+            ng-options="attr as attr.fText for attr in ctrl.attrRolls track by attr.tag"
+            ng-model="ctrl.selectedStr">
+          </select>          
         </div>
+        <div class="dex-selection">
+          <label for="dex-selection">Select Roll for Dexterity: </label>
+          <select
+            id="dex-selection"
+            name="selectedDex" 
+            ng-options="attr as attr.fText for attr in ctrl.attrRolls track by attr.tag"
+            ng-model="ctrl.selectedDex">
+          </select>          
+        </div>
+        <div class="con-selection">
+          <label for="con-selection">Select Roll for Constitution: </label>
+          <select
+            id="con-selection" 
+            name="selectedCon"
+            ng-options="attr as attr.fText for attr in ctrl.attrRolls track by attr.tag"
+            ng-model="ctrl.selectedCon">
+          </select>          
+        </div>
+        <div class="int-selection">
+          <label for="int-selection">Select Roll for Intelligence: </label>
+          <select
+            id="int-selection" 
+            name="selectedInt"
+            ng-options="attr as attr.fText for attr in ctrl.attrRolls track by attr.tag"
+            ng-model="ctrl.selectedInt">
+          </select>          
+        </div>
+        <div class="wis-selection">
+          <label for="wis-selection">Select Roll for Wisdom: </label>
+          <select
+            id="wis-selection" 
+            name="selectedWis"
+            ng-options="attr as attr.fText for attr in ctrl.attrRolls track by attr.tag"
+            ng-model="ctrl.selectedWis">
+          </select>          
+        </div>
+        <div class="cha-selection">
+          <label for="cha-selection">Select Roll for Charisma: </label>
+          <select
+            id="cha-selection" 
+            name="selectedCha" 
+            ng-options="attr as attr.fText for attr in ctrl.attrRolls track by attr.tag"
+            ng-model="ctrl.selectedCha">
+          </select>          
+        </div>
+
+      </div>
 
 
 
         <div class="char-background-container">
           <h1>Background</h1>
-          <select ng-model="ctrl.selectedBackground">
-            <option ng-repeat="bground in ctrl.charBackgrounds">
-              {{bground}}
-            </option>
+          <select 
+            ng-model="ctrl.selectedBackground"
+            ng-options="bGround as bGround.fName for bGround in ctrl.charBackgrounds track by bGround.sName">
           </select>
-          <p>Selected Background: {{ctrl.selectedBackground}}</p>
+          <p>Selected Background: {{ctrl.selectedBackground.fName}}</p>
           <div ng-switch on="ctrl.selectedBackground">
-              <!-- <div ng-include="'/partials/backgrounds'"></div> -->
+              <div ng-include="ctrl.selectedBackground.path"></div>
           </div>
         </div>
 

@@ -20,10 +20,12 @@ $(document).ready(function(){
     event.preventDefault();
     $(".dice-container").empty()
     allRolls = []
-    for(x=0;x<6;x++){
+    for(x=1;x<7;x++){
       rollDie()
-      $(".dice-container").append("<p>"+allRolls[x]+"</p>")
-    }
+
+      $(".dice-container").append("<div><label for abil-roll-"+x+">Ability Roll "+x+" </label><input id='abil-roll-"+x+"' name='abil_roll-_"+x+"' type='number' value='"+allRolls[x-1]+"' readonly></div>") 
+    };
+    $(".dice-container").append()
     console.log(allRolls)
   })
 })

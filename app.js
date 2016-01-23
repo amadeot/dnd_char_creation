@@ -20,5 +20,17 @@ app.get('/partials/charClasses/:name', function(req, res){
   res.render('partials/charClasses/'+req.params.name)
 })
 
+app.get('/partials/races/:name', function(req, res){
+  res.render('partials/races/'+req.params.name)
+})
+app.get('/partials/backgrounds/:name', function(req, res){
+  res.render('partials/backgrounds/'+req.params.name)
+})
+
+app.post('/create', function(req, res){
+  console.log(req.body);
+  
+})
+
 
 app.listen(process.env.PORT || 3000);

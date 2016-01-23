@@ -3,20 +3,20 @@ angular.module('DnDApp').controller('CharsController', CharController);
 function CharController () {
   var char = this;
   char.races = [
-    {sName:"hill-dwarf", fName:"Hill Dwarf"},
-    {sName:"mtn-dwarf", fName:"Mountain Dwarf"},
-    {sName:"high-elf", fName:"High Elf"},
-    {sName:"wood-elf", fName:"Wood Elf"},
-    {sName:"dark-elf", fName:"Dark Elf (Drow)"},
-    {sName:"lf-halfling", fName:"Lightfoot Halfling"},
-    {sName:"stout-halfling", fName:"Stout Halfling"},
-    {sName:"human", fName:"Human"},
-    {sName:"dragonborn", fName:"Dragonborn"},
-    {sName:"forest-gnome", fName:"Forest Gnome"},
-    {sName:"rock-gnome", fName:"Rock Gnome"},
-    {sName:"half-elf", fName:"Half-Elf"},
-    {sName:"half-orc", fName:"Half-Orc"},
-    {sName:"tiefling", fName:"Tiefling"}
+    {sName:"hill_dwarf", fName:"Hill Dwarf", path:"/partials/races/hill_dwarf", dwarvenToolProf:["Smith's Tools", "Brewer's Supplies", "Mason's Tools"]},
+    {sName:"mtn_dwarf", fName:"Mountain Dwarf", path:"/partials/races/mtn_dwarf"},
+    {sName:"high_elf", fName:"High Elf", path:"/partials/races/high_elf"},
+    {sName:"wood_elf", fName:"Wood Elf", path:"/partials/races/wood_elf"},
+    {sName:"dark_elf", fName:"Dark Elf (Drow)", path:"/partials/races/dark_elf"},
+    {sName:"lf_halfling", fName:"Lightfoot Halfling", path:"/partials/races/lf_halfling"},
+    {sName:"stout_halfling", fName:"Stout Halfling", path:"/partials/races/stout_halfling"},
+    {sName:"human", fName:"Human", path:"/partials/races/human"},
+    {sName:"dragonborn", fName:"Dragonborn", path:"/partials/races/dragonborn"},
+    {sName:"forest_gnome", fName:"Forest Gnome", path:"/partials/races/forest_gnome"},
+    {sName:"rock_gnome", fName:"Rock Gnome", path:"/partials/races/rock_gnome"},
+    {sName:"half_elf", fName:"Half-Elf", path:"/partials/races/half_elf"},
+    {sName:"half_orc", fName:"Half-Orc", path:"/partials/races/half_orc"},
+    {sName:"tiefling", fName:"Tiefling", path:"/partials/races/tiefling"}
   ] 
   char.dragonborn_types = [
     "Black",
@@ -59,18 +59,42 @@ function CharController () {
     "wis",
     "cha"
   ];
+  char.languages = [
+    "Common", 
+    "Dwarvish", 
+    "Elvish",
+    "Giant",
+    "Gnomish",
+    "Goblin",
+    "Halfling",
+    "Orc",
+    "Abyssal",
+    "Celestial",
+    "Draconic",
+    "Infernal",
+    "Sylvan",
+  ];
+  char.attrRolls = [
+    {tag:"abil_roll_1", fText:"Roll 1"},
+    {tag:"abil_roll_2", fText:"Roll 2"},
+    {tag:"abil_roll_3", fText:"Roll 3"},
+    {tag:"abil_roll_4", fText:"Roll 4"},
+    {tag:"abil_roll_5", fText:"Roll 5"},
+    {tag:"abil_roll_6", fText:"Roll 6"}   
+    ];
   char.charBackgrounds = [
-    "Acolyte",
-    "Charlatan",
-    "Criminal",
-    "Entertainer",
-    "Folk Hero",
-    "Guild Artisan",
-    "Hermit",
-    "Noble",
-    "Outlander",
-    "Sage",
-    "Sailor",
-    "Soldier",
-    "Urchin"]
+    {sName:"acolyte", fName:"Acolyte", path:"/partials/backgrounds/acolyte"},
+    {sName:"charlatan", fName:"Charlatan", path:"/partials/backgrounds/charlatan"},
+    {sName:"criminal", fName:"Criminal", path:"/partials/backgrounds/criminal"},
+    {sName:"entertainer", fName:"Entertainer", path:"/partials/backgrounds/entertainer"},
+    {sName:"folk_hero", fName:"Folk Hero", path:"/partials/backgrounds/folk_hero"},
+    {sName:"guild_artisan", fName:"Guild Artisan", path:"/partials/backgrounds/guild_artisan"},
+    {sName:"hermit", fName:"Hermit", path:"/partials/backgrounds/hermit"},
+    {sName:"noble", fName:"Noble", path:"/partials/backgrounds/noble"},
+    {sName:"outlander", fName:"Outlander", path:"/partials/backgrounds/outlander"},
+    {sName:"sage", fName:"Sage", path:"/partials/backgrounds/sage"},
+    {sName:"sailor", fName:"Sailor", path:"/partials/backgrounds/sailor"},
+    {sName:"soldier", fName:"Soldier", path:"/partials/backgrounds/soldier"},
+    {sName:"urchin", fName:"Urchin", path:"/partials/backgrounds/urchin"}];
+
 }

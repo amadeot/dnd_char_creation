@@ -1,0 +1,37 @@
+<p>I AM HILL DWARF</p>
+<input type="hidden" name="char_race" value="Hill Dwarf">
+<p>Hill Dwaves get +2 constitution and +1 Wisdom</p>
+<input type="hidden" name="abilBon[race1][attr]" value="con">
+<input type="hidden" name="abilBon[race1][bonus]" value=2>
+<input type="hidden" name="abilBon[race2][attr]" value="wis">
+<input type="hidden" name="abilBon[race2][bonus]" value=1>
+<p>Hill Dwarves Have a walking speed of 25 feet</p>
+<input type="hidden" name="speed" value="25">
+<p>Their speed is not reduced by wearing heavy armor</p>
+<input type="hidden" name="features" value="Speed not reduced by heavy armor">
+<p>They Have darkvision</p>
+<input type="hidden" name="features" value="Darkvision">
+<p>They have Dwarven Resilience (Bonuses against poison damage)</p>
+<input type="hidden" name="features" value="Dwarven Resiliance">
+<p>They have Dwarven Combat Training (proficient with battleaxe, handaxe, throwing hammer, and warhammer)</p>
+<input type="hidden" name="prof[wep]" value="BattleAxe">
+<input type="hidden" name="prof[wep]" value="HandAxe">
+<input type="hidden" name="prof[wep]" value="Throwing Hammer">
+<input type="hidden" name="prof[wep]" value="Warhammer">
+
+<p>They have Tool proficiency with the artisan's tools of your choice:</p>
+
+<select
+  name="prof[tool]"
+  ng-model="ctrl.selDwvnTools"
+  ng-options="tool as tool for tool in ctrl.selectedRace.dwarvenToolProf track by tool">
+</select>
+
+<p>Stonecutting: Whenever you make a History check regarding the history of a piece of stonework, you are considered a master and can add double your proficiency bonus to the check.</p>
+<input type="hidden" name="features" value="Stonecutting">
+<p>You are profficient in both Common and Dwarvish</p>
+<input type="hidden" name="prof[lang]" value="Common">
+<input type="hidden" name="prof[lang]" value="Dwarvish">
+<p>Dwarven Toughness: Your hit point maximum increases by 1, and increases by 1 every time you level up</p>
+<input type="hidden" name="hit_point_max" value="+1">
+

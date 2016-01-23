@@ -1,16 +1,21 @@
 <p>As a Barbarian, you start with 12 hit points.
-
+<input type="hidden" name="char_class" value="barbarian">
+<input type="hidden" name="hit_point_max" value="12">
 You are proficient in light armor, medium armor, and shields.</p>
-<input type="hidden" name="class-arm-prof" value="light armor, medium armor, shields">
+<input type="hidden" name="prof[armor]" value="light armor">
+<input type="hidden" name="prof[armor]" value="medium armor">
+<input type="hidden" name="prof[armor]" value="shields">
 <p>You are proficient with simple and martial weapons.</p>
-<input type="hidden" name="class-wep-prof" value="simple weapons, martial weapons">
+<input type="hidden" name="prof[wep]" value="simple weapons">
+<input type="hidden" name="prof[wep]" value="martial weapons">
 
 <p>You are proficient in saving throws of strength and constitution.</p>
-<input type="hidden" name="class-sav-skills" value="str, con">
-
+<input type="hidden" name="skill" value="str_sav">
+<input type="hidden" name="skill" value="con_sav">
 <p>Choose two of the following skills</p>
 <select 
   ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
   ng-model="ctrl.charSkillsSelected"
+  name="skill"
   multiple>
 </select>
