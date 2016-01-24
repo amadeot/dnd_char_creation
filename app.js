@@ -42,28 +42,40 @@ app.post('/create', function(req, res){
   var calcRacAbilMods = function(selector){
     switch(req.body[selector].attr){
       case "str":
-        req.body[req.body.selectedStr] = parseInt(req.body[req.body.selectedStr]) + parseInt(req.body[selector].bonus)
+        req.body[req.body.selectedStr] = parseInt(req.body[req.body.selectedStr]) + parseInt(req.body[selector].bonus);
         if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
         break;
       case "dex":
-        req.body[req.body.selectedDex] = parseInt(req.body[req.body.selectedDex]) + parseInt(req.body[selector].bonus)       
+        req.body[req.body.selectedDex] = parseInt(req.body[req.body.selectedDex]) + parseInt(req.body[selector].bonus);     
         if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
         break;
       case "con":
-        req.body[req.body.selectedCon] = parseInt(req.body[req.body.selectedCon]) + parseInt(req.body[selector].bonus)
+        req.body[req.body.selectedCon] = parseInt(req.body[req.body.selectedCon]) + parseInt(req.body[selector].bonus);
         if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
         break;
       case "int":
-        req.body[req.body.selectedInt] = parseInt(req.body[req.body.selectedInt]) + parseInt(req.body[selector].bonus)
+        req.body[req.body.selectedInt] = parseInt(req.body[req.body.selectedInt]) + parseInt(req.body[selector].bonus);
         if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
         break;
       case "wis":
-        req.body[req.body.selectedWis] = parseInt(req.body[req.body.selectedWis]) + parseInt(req.body[selector].bonus)
+        req.body[req.body.selectedWis] = parseInt(req.body[req.body.selectedWis]) + parseInt(req.body[selector].bonus);
         if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
         break;
       case "cha":
-        req.body[req.body.selectedCha] = parseInt(req.body[req.body.selectedCha]) + parseInt(req.body[selector].bonus)
+        req.body[req.body.selectedCha] = parseInt(req.body[req.body.selectedCha]) + parseInt(req.body[selector].bonus);
         if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
+        break;
+      case "all":
+        req.body[req.body.selectedStr] = parseInt(req.body[req.body.selectedStr]) + 1;
+        req.body[req.body.selectedDex] = parseInt(req.body[req.body.selectedDex]) + 1;
+        req.body[req.body.selectedCon] = parseInt(req.body[req.body.selectedCon]) + 1;
+        req.body[req.body.selectedInt] = parseInt(req.body[req.body.selectedInt]) + 1;
+        req.body[req.body.selectedWis] = parseInt(req.body[req.body.selectedWis]) + 1;
+        req.body[req.body.selectedCha] = parseInt(req.body[req.body.selectedCha]) + 1;
+        break;
+      case "choose":
+        calcRacAbilMods("abilBon3");
+        calcRacAbilMods("abilBon4");
         break;
     }
   };
@@ -79,6 +91,13 @@ app.post('/create', function(req, res){
     req.body.hit_point_max = parseInt(req.body.hit_point_max) + calcAbilBonus(parseInt(req.body[req.body.selectedCon]))
   }
   calcHitPoints();
+  var combineRace = function(){
+    if(Array.isArray(req.body.char_race)){
+      var result = req.body.char_race.join(", ")
+      req.body.char_race = result
+    }
+  }
+  combineRace()
   var new_char = {
     char_name: req.body.charName,
     player_name: req.body.playerName,

@@ -1,0 +1,22 @@
+<input type="hidden" name="char_race" value="Dragonborn">
+<p>Dragonborns get +2 Strength and +1 Charisma</p>
+<input type="hidden" name="abilBon1[attr]" value="str">
+<input type="hidden" name="abilBon1[bonus]" value="2">
+<input type="hidden" name="abilBon2[attr]" value="cha">
+<input type="hidden" name="abilBon2[bonus]" value="1">
+<p>Dragonborns have a walking speed of 30 feet</p>
+
+<p>Choose a draconic ancestry:</p>
+<select
+  name="char_race"
+  ng-options="ancestry as ancestry.type for ancestry in ctrl.dragonborn_types track by ancestry.type"
+  ng-model="ctrl.selectedAncestry">
+</select>
+
+<p>Selected Ancestry: {{ctrl.selectedAncestry.type}}</p>
+<p>You have a breath weapon which deals {{ctrl.selectedAncestry.damage_type}} damage and shoots in a {{ctrl.selectedAncestry.br_wep_type}}. Anyone caught in it must make a {{ctrl.selectedAncestry.br_wep_save}} save. After use, a short rest must be taken before it can be used again.</p>
+<input type="hidden" name="features" value="Breath Attack">
+
+<p>They are proficient in both Common and Draconic</p>
+<input type="hidden" name="prof[lang]" value="Common">
+<input type="hidden" name="prof[lang]" value="Draconic">

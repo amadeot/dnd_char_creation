@@ -21,12 +21,12 @@ You are proficient in light armor, medium armor, and shields.</p>
 </select>
 <p>You start with the following weapons</p>
 <select
-  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep1"
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_one"
   ng-model="ctrl.charWep1Selected"
   name="equip[wep]"
 ></select>
 <select
-  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep2"
+  ng-options="weapon2 as weapon2 for weapon2 in ctrl.selectedCharClass.wep_two"
   ng-model="ctrl.charWep2Selected"
   name="equip[wep]"
 ></select>
