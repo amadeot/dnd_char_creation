@@ -23,7 +23,7 @@ $(document).ready(function(){
     for(x=1;x<7;x++){
       rollDie()
 
-      $(".dice-container").append("<div><label for abil-roll-"+x+">Ability Roll "+x+" </label><input id='abil-roll-"+x+"' name='abil_roll-_"+x+"' type='number' value='"+allRolls[x-1]+"' readonly></div>") 
+      $(".dice-container").append("<div><label for abil-roll_"+x+">Ability Roll "+x+" </label><input id='abil-roll-"+x+"' name='abil_roll_"+x+"' type='number' value='"+allRolls[x-1]+"' readonly></div>") 
     };
     $(".dice-container").append()
     console.log(allRolls)

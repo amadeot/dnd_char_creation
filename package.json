@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/amadeot/dnd_char_creation/issues"
   },
-  "homepage": "https://github.com/amadeot/dnd_char_creation#readme"
+  "homepage": "https://github.com/amadeot/dnd_char_creation#readme",
+  "dependencies": {
+    "mongoose": "^4.3.7"
+  }
 }

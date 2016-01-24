@@ -31,7 +31,7 @@ function CharController () {
     "White" 
   ];
   char.charClasses = [
-    {name:"Barbarian", path:"/partials/charClasses/barbarian", possible_skills:["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]},
+    {name:"Barbarian", path:"/partials/charClasses/barbarian", possible_skills:["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"], wep1:["BattleAxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip"], wep2:["Two Handaxes", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Light Crossbow", "Dart", "Shortbow", "Sling"]},
     {name:"Bard", path:"/partials/charClasses/bard"},
     {name:"Cleric", path:"/partials/charClasses/cleric"},
     {name:"Druid", path:"/partials/charClasses/druid"},

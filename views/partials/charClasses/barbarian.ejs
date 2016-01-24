@@ -19,3 +19,21 @@ You are proficient in light armor, medium armor, and shields.</p>
   name="skill"
   multiple>
 </select>
+<p>You start with the following weapons</p>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep1"
+  ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep2"
+  ng-model="ctrl.charWep2Selected"
+  name="equip[wep]"
+></select>
+<p>You also start with an explorer's pack and 4 javelins</p>
+<input type="hidden" name="equip[wep]" value="Javelin(4)">
+<input type="hidden" name="equip[gen]" value="Explorer's Pack">
+<p>You gain the ability to rage, where when you gain benefits on rolls and gain resistances to damages twice per day. There are limitations, you can't be wearing heavy armor or cast spells</p>
+<input type="hidden" name="features" value="Rage">
+<p>You also gain Unarmored Defense, which allows you to make your armor class 10+ your constitution modifier + your dexterity modifier</p>
+<input type="hidden" name="features", value="Unarmored Defense">

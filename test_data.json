@@ -1,5 +1,7 @@
 [{
-  "name":String,
+  "char_name":String,
+  "player_name":String,
+  "player_email":String,
   "char_class":String,
   "char_race":String,
   "char_background":String,
