@@ -17,6 +17,8 @@ var dndSchema = mongoose.Schema({
   con_bonus: Number,
   int: Number,
   int_bonus: Number,
+  wis: Number,
+  wis_bonus: Number,
   cha: Number,
   cha_bonus: Number,
   armor_class: Number,

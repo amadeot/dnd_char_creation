@@ -6,6 +6,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname));
+
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
@@ -37,6 +39,35 @@ app.post('/create', function(req, res){
     bonus = Math.floor((num-10)/2)
     return bonus
   };
+  var calcRacAbilMods = function(selector){
+    switch(req.body[selector].attr){
+      case "str":
+        req.body[req.body.selectedStr] = parseInt(req.body[req.body.selectedStr]) + parseInt(req.body[selector].bonus)
+        if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
+        break;
+      case "dex":
+        req.body[req.body.selectedDex] = parseInt(req.body[req.body.selectedDex]) + parseInt(req.body[selector].bonus)       
+        if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
+        break;
+      case "con":
+        req.body[req.body.selectedCon] = parseInt(req.body[req.body.selectedCon]) + parseInt(req.body[selector].bonus)
+        if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
+        break;
+      case "int":
+        req.body[req.body.selectedInt] = parseInt(req.body[req.body.selectedInt]) + parseInt(req.body[selector].bonus)
+        if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
+        break;
+      case "wis":
+        req.body[req.body.selectedWis] = parseInt(req.body[req.body.selectedWis]) + parseInt(req.body[selector].bonus)
+        if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
+        break;
+      case "cha":
+        req.body[req.body.selectedCha] = parseInt(req.body[req.body.selectedCha]) + parseInt(req.body[selector].bonus)
+        if(selector==="abilBon1"){calcRacAbilMods("abilBon2")};
+        break;
+    }
+  };
+  calcRacAbilMods("abilBon1");
   var calcHitPoints = function(){
     var reduced = 0;
     if(Array.isArray(req.body.hit_point_max)){

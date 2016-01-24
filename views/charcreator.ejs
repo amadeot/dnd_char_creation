@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html ng-app="DnDApp">
 <head>
-  <title>Make a Character</title>
+  <title>Let's make a Character</title>
   <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="/angular/angular.min.js"></script>
   <script type="text/javascript" src="/app.js"></script>
   <script type="text/javascript" src="/chars_controller.js"></script>
   <script type="text/javascript" src="/main.js"></script>
+  <link rel=" stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+  <script src="/semantic/dist/semantic.min.js"></script>
 </head>
 <body>
   <div ng-controller="CharsController as ctrl" >
+    <h4 class="ui horizontal divider header">
+      <i class="add user icon"></i>
+      Let's make a Character!
+    </h4>
+    <p>Before we start, take a while and try to imagine the type of character you want to be in broad strokes.</p>
+    <h4 class="ui horizontal divider header">
+      <i class="settings icon"></i>
+      Ready?
+    </h4>
+    <table class="ui table">
+      
+    </table>
     <form method="post" action="/create">
-      <input name="charName" type="text" placeholder="Character Name">
-      <input name="playerName" type="text" placeholder="Player Name">
-      <input name="playerEmail" type="text" placeholder="Player Email">
+      <div ui section divider>
+        <input name="charName" type="text" placeholder="Character Name">
+        <input name="playerName" type="text" placeholder="Player Name">
+        <input name="playerEmail" type="text" placeholder="Player Email">
+      </div>
 
       <div class="race-container">
         <h1>Race</h1>

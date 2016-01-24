@@ -4,7 +4,7 @@ function CharController () {
   var char = this;
   char.races = [
     {sName:"hill_dwarf", fName:"Hill Dwarf", path:"/partials/races/hill_dwarf", dwarvenToolProf:["Smith's Tools", "Brewer's Supplies", "Mason's Tools"]},
-    {sName:"mtn_dwarf", fName:"Mountain Dwarf", path:"/partials/races/mtn_dwarf"},
+    {sName:"mtn_dwarf", fName:"Mountain Dwarf", path:"/partials/races/mtn_dwarf", dwarvenToolProf:["Smith's Tools", "Brewer's Supplies", "Mason's Tools"]},
     {sName:"high_elf", fName:"High Elf", path:"/partials/races/high_elf"},
     {sName:"wood_elf", fName:"Wood Elf", path:"/partials/races/wood_elf"},
     {sName:"dark_elf", fName:"Dark Elf (Drow)", path:"/partials/races/dark_elf"},
