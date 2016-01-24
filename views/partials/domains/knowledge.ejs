@@ -1,0 +1,19 @@
+<p>The Knowledge Domain is available to clerics who worship gods devoted to learning and invention</p>
+<p>When you choose the Knowledge Domain, the following two spells are always prepared no matter what: Command and Identify</p>
+<input type="hidden" name="features" value="Cleric Domain: Knowledge">
+<p>At first level, you also learn two more languages of your choice</p>
+<select 
+  ng-options="languages as languages for languages in ctrl.languages track by languages"
+  ng-model="ctrl.bgLanguages"
+  name="prof[lang]"
+  multiple>
+</select>
+
+<p>Finally, you become proficient in two of the following skills. Whenever you use either of those skills for an ability check, your proficiency bonus is doubled.</p>
+
+<select
+  ng-options="domainSkill as domainSkill for domainSkill in ctrl.selDomain.possible_skills track by domainSkill"
+  ng-model="ctrl.selDomainSkills"
+  name="skills"
+  multiple>
+</select>

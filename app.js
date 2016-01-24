@@ -29,6 +29,10 @@ app.get('/partials/backgrounds/:name', function(req, res){
   res.render('partials/backgrounds/'+req.params.name)
 })
 
+app.get('/partials/domains/:name', function(req, res){
+  res.render('partials/domains/'+req.params.name)
+})
+
 app.get('/list', function(req, res){
   res.send('hi')
 })
@@ -127,9 +131,9 @@ app.post('/create', function(req, res){
     equipment: req.body.equip,
     cantrips: req.body.cantrips,
     first_level_spells: req.body.fLSpells,
-    spellcasting_ability: 0,
-    spell_save_dc: 0,
-    spell_attack_bonus: 0
+    spellcasting_ability: req.body.spellcasting_ability,
+    spell_save_dc: req.body.spell_save_dc,
+    spell_attack_bonus: req.body.spell_attack_bonus
   }
   var charMaker = new Character(new_char);
   charMaker.save(function(err, result){

@@ -30,7 +30,7 @@ var dndSchema = mongoose.Schema({
   equipment: {},
   cantrips: Array,
   first_level_spells: Array,
-  spellcasting_ability: Number,
+  spellcasting_ability: String,
   spell_save_dc: Number,
   spell_attack_bonus: Number
 });

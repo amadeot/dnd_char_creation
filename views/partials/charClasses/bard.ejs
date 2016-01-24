@@ -1,0 +1,67 @@
+<p>As a Bard, you start with 8 hit points.
+<input type="hidden" name="char_class" value="Bard">
+<input type="hidden" name="hit_point_max" value="8">
+<p>You are proficient in light armor.</p>
+<input type="hidden" name="prof[armor]" value="light armor">
+<p>You are proficient with simple weapons, hand crossbows, longswords, rapiers, and shortswords.</p>
+<input type="hidden" name="prof[wep]" value="simple weapons">
+<input type="hidden" name="prof[wep]" value="hand crossbows">
+<input type="hidden" name="prof[wep]" value="longswords">
+<input type="hidden" name="prof[wep]" value="shortswords">
+<input type="hidden" name="prof[wep]" value="rapiers">
+
+<p>You are proficient with three musical instruments of your choice</p>
+<input type="text" name="prof[tools]" placeholder="Instrument">
+<input type="text" name="prof[tools]" placeholder="Instrument">
+<input type="text" name="prof[tools]" placeholder="Instrument">
+
+<p>You are proficient in saving throws of dexterity and charisma.</p>
+<input type="hidden" name="skill" value="dex_sav">
+<input type="hidden" name="skill" value="cha_sav">
+<p>Choose three of the following skills</p>
+<select 
+  ng-options="skills as skills for skills in ctrl.all_skills track by skills"
+  ng-model="ctrl.charClassSkillsSelected"
+  name="skill"
+  multiple>
+</select>
+
+<p>You start with the following weapon</p>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_one track by weapon"
+  ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<p>You can choose between a diplomat's pack or an entertainer's pack</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_one track by option"
+  ng-model="ctrl.charOpt1Selected"
+  name="equip[gen]">
+</select>
+<p>You start with a musical instrument of your choice</p>
+<input type="text" name="equip[tool]">
+<p>You also start with an leather armor and a dagger</p>
+<input type="hidden" name="equip[wep]" value="Dagger">
+<input type="hidden" name="equip[armor]" value="Leather Armor">
+<p>Spellcasting: as a bard you have access to magic. You start by knowing two cantrips (of which you can cast as many times as you want) and four first level spells. Of the first level spells you know, you are able to cast two spells (either the same one twice, or two spells once) between each long rest. You use your charisma modifier as your spellcasting ability. You are able to cast any spell you know with the ritual tag as a ritual (casting a spell as a ritual takes ten minutes to cast, but does not use up one of your slots.) Your instrument is your spellcasting focus, and you need it to be able to cast spells. </p>
+<input type="hidden" name="spellcasting_ability" value="cha">
+<input type="hidden" name="spell_save_dc" value="10">
+<input type="hidden" name="spell_attack_bonus" value="2">
+<p>Select 2 Cantrips from the list below</p>
+<select
+  ng-options="cantrip as cantrip for cantrip in ctrl.selectedCharClass.cantrips track by cantrip"
+  ng-model="ctrl.classCantrips"
+  name="cantrips"
+  multiple>
+</select>
+<p>Select 4 1st level spells from the list below</p>
+<select
+  ng-options="spell as spell for spell in ctrl.selectedCharClass.spells track by spell"
+  ng-model="ctrl.classFLSpells"
+  name="fLSpells"
+  multiple>
+</select>
+
+
+<p>You also gain the Bardic Inspiration ability, which you can use as a bonus action. It allows you to choose a creature that can hear you within 60 feet, and it gives that creature a Bardic Inspiration Die (six sided die). Within the next ten minutes, it can use that die once to add the number on it to an ability check, attack roll, or saving throw. You can use this ability as many times as your Charisma modifier, and you regain uses of it after every long rest.</p>
+<input type="hidden" name="features", value="Bardic Inspiration">

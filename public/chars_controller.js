@@ -31,18 +31,22 @@ function CharController () {
     {type:"White", damage_type: "cold", br_wep_type: "15 foot cone", br_wep_save: "constitution"}
   ];
   char.charClasses = [
-    {name:"Barbarian", path:"/partials/charClasses/barbarian", possible_skills:["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"], wep_one:["BattleAxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip"], wep_two:["Two Handaxes", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Light Crossbow", "Dart", "Shortbow", "Sling"]},
-    {name:"Bard", path:"/partials/charClasses/bard"},
-    {name:"Cleric", path:"/partials/charClasses/cleric"},
-    {name:"Druid", path:"/partials/charClasses/druid"},
-    {name:"Fighter", path:"/partials/charClasses/fighter"},
-    {name:"Monk", path:"/partials/charClasses/monk"},
+    {name:"Barbarian", path:"/partials/charClasses/barbarian", possible_skills:["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"], wep_one:["BattleAxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip"], wep_two:["Two Handaxes", "Club", "Dagger", "Greatclub", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Light Crossbow", "Dart", "Shortbow", "Sling"]},
+    {name:"Bard", path:"/partials/charClasses/bard", 
+        wep_one: ["Rapier", "Longsword", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Light Crossbow", "Dart", "Shortbow", "Sling"], 
+        opt_one: ["Diplomat's Pack", "Entertainer's Pack"], 
+        cantrips: ["Blade Ward", "Dancing Lights", "Friends", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Prestidigitation", "True Strike", "Vicious Mockery"],
+        spells: ["Animal Friendship", "Bane", "Charm Person", "Comprehend Languages", "Cure Wounds", "Detect Magic", "Disguise Self", "Dissonant Whispers", "Faerie Fire", "Feather Fall", "Healing Word", "Heroism", "Identify", "Illusory Script", "Longstrider", "Silent Image", "Sleep", "Speak with Animals", "Tasha’s Hideous Laughter", "Thunderwave", "Unseen Servant"]},
+    {name:"Cleric", path:"/partials/charClasses/cleric", possible_skills: ["History", "Insight", "Medicine", "Persuasion", "Religion"], wep_one: ["Mace", "Warhammer"], wep_two: ["Light Crossbow","Handaxe", "Club", "Dagger", "Greatclub", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Dart", "Shortbow", "Sling"], armor: ["Scale Mail", "Leather Armor", "Chain Mail"], opt_one:["Priest's Pack", "Explorer's Pack"], cantrips:["Guidance", "Light", "Mending", "Resistance", "Sacred Flame", "Spare the Dying", "Thaumaturgy"]},
+    {name:"Druid", path:"/partials/charClasses/druid", cantrips: ["Druidcraft", "Guidance", "Mending", "Poison Spray", "Produce Flame", "Resistance", "Shillelagh", "Thorn Whip"], possible_skills: ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"], opt_one: ["Wooden Shield", " Handaxe", "Club", "Dagger", "Greatclub", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Light Crossbow", "Dart", "Shortbow", "Sling"], opt_two:["Scimitar", " Handaxe", "Club", "Dagger", "Greatclub", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear"]},
+    {name:"Fighter", path:"/partials/charClasses/fighter", possible_skills: ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "and Survival"], armor:["Chain Mail", "Leather Armor and a Longbow"], wep_one:["Shield", "BattleAxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Net"], wep_two:["Shield", "BattleAxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Net"], wep_three:["Light Crossbow", "Two Handaxes"], opt_one:["Dungeoneer's Pack", "Explorer's Pack"], fighting_style:["Archery", "Defense", "Dueling", "Great Weapon Fighting", "Protection", "Two Weapon Fighting"]},
+    {name:"Monk", path:"/partials/charClasses/monk", possible_skills: ["Acrobatics", "Athletics", "Insight", "Religion", "Stealth"], wep_one:["Shortsword", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Light Crossbow", "Dart", "Shortbow", "Sling"], opt_one:["Dungeoneer's Pack", "Explorer's Pack"]},
     {name:"Paladin", path:"/partials/charClasses/paladin"},
     {name:"Ranger", path:"/partials/charClasses/ranger"},
     {name:"Rogue", path:"/partials/charClasses/rogue"},
     {name:"Sorcerer", path:"/partials/charClasses/sorcerer"},
     {name:"Warlock", path:"/partials/charClasses/warlock"},
-    {name:"Wizard", path:"/partials/charClasses/wizard", possible_cantrips:["Acid Splash", "Blade Ward", "Chill Touch", "Dancing Lights", "Fire Bolt", "Friends", "Light", "Mage Hand", "Mending Message", "Minor Illusion", "Poison Spray", "Prestidigitation", "Ray of Frost", "Shocking Grasp", "True Strike"]}
+    {name:"Wizard", path:"/partials/charClasses/wizard", cantrips:["Acid Splash", "Blade Ward", "Chill Touch", "Dancing Lights", "Fire Bolt", "Friends", "Light", "Mage Hand", "Mending Message", "Minor Illusion", "Poison Spray", "Prestidigitation", "Ray of Frost", "Shocking Grasp", "True Strike"]}
   ];
   char.showSelected = function(){
     console.log('select changed');
@@ -93,6 +97,14 @@ function CharController () {
     "Draconic",
     "Infernal",
     "Sylvan",
+  ];
+  char.domains = [
+  {name:"Knowledge", path:"/partials/domains/knowledge", possible_skills:["Aracana", "History", "Nature", "Religion"]},
+  {name:"Light", path:"/partials/domains/light"},
+  {name:"Nature", path:"/partials/domains/nature", cantrips:["Druidcraft", "Guidance", "Mending", "Poison Spray", "Produce Flame", "Resistance", "Shillelagh", "Thorn Whip"]},
+  {name:"Tempest", path:"/partials/domains/tempest"},
+  {name:"Trickery", path:"/partials/domains/trickery"},
+  {name:"War", path:"/partials/domains/war"}
   ];
   char.attrRolls = [
     {tag:"abil_roll_1", fText:"Roll 1"},

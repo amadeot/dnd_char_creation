@@ -1,0 +1,63 @@
+<p>As a Druid, you start with 8 hit points, plus your constitution modifier.
+<input type="hidden" name="char_class" value="Druid">
+<input type="hidden" name="hit_point_max" value="8">
+<p>You are proficient in light armor, medium armor, and shields, but cannot use armor or shields made with metal.</p>
+<input type="hidden" name="prof[armor]" value="light armor">
+<input type="hidden" name="prof[armor]" value="medium armor">
+<input type="hidden" name="prof[armor]" value="shields">
+<p>You are proficient with Clubs, Daggers, Darts, Javelins, Maces, Quarterstaffs, Scimitars, Sicles, Slings, and Spears.</p>
+<input type="hidden" name="prof[wep]" value="Clubs">
+<input type="hidden" name="prof[wep]" value="Daggers">
+<input type="hidden" name="prof[wep]" value="Darts">
+<input type="hidden" name="prof[wep]" value="Javelins">
+<input type="hidden" name="prof[wep]" value="Maces">
+<input type="hidden" name="prof[wep]" value="Quarterstaffs">
+<input type="hidden" name="prof[wep]" value="Scimitars">
+<input type="hidden" name="prof[wep]" value="Sicles">
+<input type="hidden" name="prof[wep]" value="Slings">
+<input type="hidden" name="prof[wep]" value="Spears">
+
+<p>You are proficient with Herbalism Kits</p>
+<input type="hidden" name="prof[tools]" placeholder="Herbalism Kits">
+
+<p>You are proficient in saving throws of intelligence and wisdom.</p>
+<input type="hidden" name="skill" value="int_sav">
+<input type="hidden" name="skill" value="wis_sav">
+<p>Choose two of the following skills</p>
+<select 
+  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
+  ng-model="ctrl.charClassSkillsSelected"
+  name="skill"
+  multiple>
+</select>
+
+<p>You start with the following weapons</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_one track by option"
+  ng-model="ctrl.charOpt1Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_two track by option"
+  ng-model="ctrl.charOpt2Selected"
+  name="equip[wep]">
+</select>
+
+<p>You also start with an leather armor, an explorer's pack and a dagger</p>
+<input type="hidden" name="equip[wep]" value="Dagger">
+<input type="hidden" name="equip[gen]" value="Explorer's Pack">
+<input type="hidden" name="equip[armor]" value="Leather Armor">
+<p>Spellcasting: as a Druid you have access to magic. You start by knowing two cantrips (of which you can cast as many times as you want) and all druid first level spells. Of the first level spells you know, you are able to cast two spells (either the same one twice, or two spells once) between each long rest. You use your wisdom modifier as your spellcasting ability. You are able to cast any spell you know with the ritual tag as a ritual (casting a spell as a ritual takes ten minutes to cast, but does not use up one of your slots.) You can use sprigs of certain plants as your spellcasting focus, but it is not required. After a long rest, you can prepare your spells, meaning that you can choose which spells you will be able to cast until the next long rest. </p>
+<input type="hidden" name="spellcasting_ability" value="wis">
+<input type="hidden" name="spell_save_dc" value="10">
+<input type="hidden" name="spell_attack_bonus" value="2">
+<p>Select 2 Cantrips from the list below</p>
+<select
+  ng-options="cantrip as cantrip for cantrip in ctrl.selectedCharClass.cantrips track by cantrip"
+  ng-model="ctrl.classCantrips"
+  name="cantrips"
+  multiple>
+</select>
+
+<p>You also gain the Druidic Language ability, which allows you leave secret messages for other druids. You and others who know this language can automatically spot a message, others can spot it with a successful perception check but can't read it without magic.</p>
+<input type="hidden" name="features", value="Druidic Language">

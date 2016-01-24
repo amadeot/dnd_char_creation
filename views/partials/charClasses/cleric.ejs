@@ -1,0 +1,69 @@
+<p>As a Cleric, you start with 8 hit points.
+<input type="hidden" name="char_class" value="Cleric">
+<input type="hidden" name="hit_point_max" value="8">
+<p>You are proficient in light armor, medium armor, and shields.</p>
+<input type="hidden" name="prof[armor]" value="light armor">
+<input type="hidden" name="prof[armor]" value="medium armor">
+<input type="hidden" name="prof[armor]" value="shields">
+<p>You are proficient with simple weapons</p>
+<input type="hidden" name="prof[wep]" value="simple weapons">
+
+
+<p>You are proficient in saving throws of wisdom and charisma.</p>
+<input type="hidden" name="skill" value="wis_sav">
+<input type="hidden" name="skill" value="cha_sav">
+<p>Choose two of the following skills</p>
+<select 
+  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
+  ng-model="ctrl.charClassSkillsSelected"
+  name="skill"
+  multiple>
+</select>
+
+<p>You start with the following weapons. Be careful in selecting the Warhammer, a cleric isn't necessarily able to use martial weapons or a Warhammer specifically, and if you aren't proficient in it you'll incur a penalty.</p>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_one track by weapon"
+  ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_two track by weapon"
+  ng-model="ctrl.charWep2Selected"
+  name="equip[wep]"
+></select>
+
+<p>You can start with the following armors. Be careful in selecting the Chain Mail, a cleric isn't necessarily able to use heavy armor or Chain Mail specifically, and if you aren't proficient in it you'll incur a penalty.</p>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.armor track by weapon"
+  ng-model="ctrl.charArmorSelected"
+  name="equip[wep]"
+></select>
+
+<p>You can choose between a Priest's pack or an Explorer's pack</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_one track by option"
+  ng-model="ctrl.charOpt1Selected"
+  name="equip[gen]">
+</select>
+<p>You also start with a shield and a holy symbol</p>
+<input type="hidden" name="equip[armor]" value="Shield">
+<input type="hidden" name="equip[gen]" value="Holy Symbol">
+<p>Spellcasting: as a Cleric you have access to magic. You start by knowing three cantrips (of which you can cast as many times as you want) and all cleric first level spells. Of the first level spells you know, you are able to cast two spells (either the same one twice, or two spells once) between each long rest. You use your wisdom modifier as your spellcasting ability. You are able to cast any spell you know with the ritual tag as a ritual (casting a spell as a ritual takes ten minutes to cast, but does not use up one of your slots.) Your holy symbol is your spellcasting focus, and you need it to be able to cast spells. After a long rest, you can prepare your spells, meaning that you can choose which spells you will be able to cast until the next long rest.</p>
+<input type="hidden" name="spellcasting_ability" value="wis">
+<input type="hidden" name="spell_save_dc" value="10">
+<input type="hidden" name="spell_attack_bonus" value="2">
+<p>Select 3 Cantrips from the list below</p>
+<select
+  ng-options="cantrip as cantrip for cantrip in ctrl.selectedCharClass.cantrips track by cantrip"
+  ng-model="ctrl.classCantrips"
+  name="cantrips"
+  multiple>
+</select>
+<p>You also gain the Divine Domain ability, which grants you access to more prepared spells. Choose one of the following domains</p>
+<select 
+  ng-options="domain as domain.name for domain in ctrl.domains track by domain.name"
+  ng-model="ctrl.selDomain">
+</select>
+<p>Selected Domain: {{ctrl.selDomain.name}}</p>
+<div ng-include="ctrl.selDomain.path"></div>
+

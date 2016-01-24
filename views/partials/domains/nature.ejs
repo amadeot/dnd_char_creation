@@ -1,0 +1,11 @@
+<p>The Nature Domain is available to clerics who worship gods devoted to nature.</p>
+<p>When you choose the Nature Domain, the following two spells are always prepared no matter what: Animal Friendship and Speak with Animals</p>
+<input type="hidden" name="features" value="Cleric Domain: Nature">
+<p>It also allows you to gain proficiency with heavy armor (in case you were eying that Chain Mail before when choosing equipment.)</p>
+<input type="hidden" name="prof[armor]" value="Heavy Armor">
+<p>Finally, you gain a cantrip from the druid spell list of your choice below</p>
+<select
+  ng-options="cantrip as cantrip for cantrip in ctrl.selDomain.cantrips track by cantrip"
+  ng-model="ctrl.selDomainSkills"
+  name="cantrips">
+</select>

@@ -1,0 +1,53 @@
+<p>As a Fighter, you start with 10 hit points plus your constitution modifier.
+<input type="hidden" name="char_class" value="Fighter">
+<input type="hidden" name="hit_point_max" value="10">
+<p>You are proficient in all armor and shields.</p>
+<input type="hidden" name="prof[armor]" value="All Armor">
+<input type="hidden" name="prof[armor]" value="Shields">
+<p>You are proficient with simple and martial weapons.</p>
+<input type="hidden" name="prof[wep]" value="simple weapons">
+<input type="hidden" name="prof[wep]" value="martial weapons">
+
+<p>You are proficient in saving throws of strength and constitution.</p>
+<input type="hidden" name="skill" value="str_sav">
+<input type="hidden" name="skill" value="con_sav">
+<p>Choose two of the following skills</p>
+<select 
+  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
+  ng-model="ctrl.charClassSkillsSelected"
+  name="skill"
+  multiple>
+</select>
+<p>You start with the following weapons</p>
+<select
+  ng-options="armor as armor for armor in ctrl.selectedCharClass.armor track by armor"
+  ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="weapon2 as weapon2 for weapon2 in ctrl.selectedCharClass.wep_two track by weapon2"
+  ng-model="ctrl.charWep2Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="weapon3 as weapon3 for weapon3 in ctrl.selectedCharClass.wep_three track by weapon3"
+  ng-model="ctrl.charWep3Selected"
+  name="equip[wep]"
+></select>
+
+<p>You also start with the one of these packs</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_one track by option"
+  ng-model="ctrl.charOpt1Selected"
+  name="equip[gen]"
+></select>
+
+<p>You gain the following fighitng style</p>
+<select
+  ng-options="style as style for style in ctrl.selectedCharClass.fighting_style track by style"
+  ng-model="ctrl.charFightingStyle"
+  name="features"
+></select>
+
+<p>You also gain the Second Wind ability, which you can use as a bonus action to regain 1d10 hit points + your fighter level. You can't use the ability again until after a short rest</p>
+<input type="hidden" name="features", value="Second Wind">
