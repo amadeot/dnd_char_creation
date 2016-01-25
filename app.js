@@ -29,8 +29,11 @@ app.get('/partials/domains/:name', function(req, res){
   res.render('partials/domains/'+req.params.name)
 })
 
-app.get('/list', function(req, res){
-  res.send('hi')
+app.get('/show/:_id', function(req, res){
+  Character.findOne({ '_id': req.params._id }, {}, function (err, person) {
+  if (err) return handleError(err);
+  res.send(person)
+  })
 })
 
 app.post('/create', function(req, res){
@@ -147,7 +150,7 @@ app.post('/create', function(req, res){
   }
   var charMaker = new Character(new_char);
   charMaker.save(function(err, result){
-    res.redirect('/list')
+    res.redirect('/show/'+result._id)
   })
 
 })

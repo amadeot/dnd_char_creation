@@ -107,8 +107,8 @@ function CharController () {
   {name:"War", path:"/partials/domains/war"}
   ];
   char.origins = [
-    {name:"Draconic Bloodline", path:"/partials/domains/draconic"},
-    {name:"Wild Magic", path:"/partials/origins/wild_magic"}
+    {name:"Draconic Bloodline", path:"/partials/domains/draconic", },
+    {name:"Wild Magic", path:"/partials/domains/wild"}
   ]
   char.attrRolls = [
     {tag:"abil_roll_1", fText:"Roll 1"},

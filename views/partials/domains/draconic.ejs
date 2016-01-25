@@ -1,1 +1,16 @@
-<p>dragon</p>
+<p>Your innate magic comes from draconic magic that was mingled with your blood or that of your ancestors. Most often, sorcerers with this origin trace their descent
+back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might even have claimed a dragon parent. Some of these bloodlines are well established in the world, but most are obscure. Any given sorcerer could be the first of a new bloodline, as a result of a pact or some other exceptional circumstance.
+</p>
+
+<p>You must choose a type of dragon from which you claim your draconic ancestor. As you level, this will add different bonuses depending on the type of damage of your Draconic Ancestor.</p>
+<input type="hidden" name="features" value="Dragon Ancestry">
+<select
+  ng-model="ctrl.SelSorcAncestry"
+  ng-options="ancestry as ancestry.type for ancestry in ctrl.dragonborn_types track by ancestry.type"
+  name="features"
+></select>
+<p>You gain the ability Draconic Resilience: At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.
+Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren’t wearing armor, your AC equals 13 + your Dexterity modifier.
+</p>
+<input type="hidden" name="features" value="Draconic Resilience">
+<input type="hidden" name="hit_point_max" value="1">
