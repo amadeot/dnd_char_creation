@@ -29,10 +29,6 @@ app.get('/partials/domains/:name', function(req, res){
   res.render('partials/domains/'+req.params.name)
 })
 
-app.get('/partials/origins/:name', function(req, res){
-  res.render('/partials/origins/'+req.params.name)
-})
-
 app.get('/list', function(req, res){
   res.send('hi')
 })
