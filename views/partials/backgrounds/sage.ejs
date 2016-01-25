@@ -1,0 +1,23 @@
+<p>You are an Sage</p>
+<input type="hidden" name="char_background" value="Sage">
+<p>You are proficient for checks in Arcana and History</p>
+<input type="hidden" name="skill" value="Arcana">
+<input type="hidden" name="skill" value="History">
+<p>You are proficient in two languages of your choice.</p>
+<select 
+  ng-options="languages as languages for languages in ctrl.languages track by languages"
+  ng-model="ctrl.bgLanguages"
+  name="prof[lang]"
+  multiple 
+  >
+</select>
+<p>You start with the following equipment: a bottle of black ink and quill, a small knife, a letter from a dead colleague posing a question you have not been able to answer, a set of common clothes, and 10 gold.</p>
+<input type="hidden" name="equip[gen]" placeholder="Bottle of Black Ink and Quill">
+<input type="hidden" name="equip[gen]" placeholder="Small Knife">
+<input type="hidden" name="equip[gen]" placeholder="Letter">
+<input type="hidden" name="equip[clothes]" value="Common Clothes">
+<input type="hidden" name="equip[gold]" value="10">
+<p>You gain the background feature "Researcher": When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information com es from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might
+rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.
+</p>
+<input type="hidden" name="features" value="Researcher">

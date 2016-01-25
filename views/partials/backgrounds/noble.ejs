@@ -1,0 +1,21 @@
+<p>You are an Noble</p>
+<input type="hidden" name="char_background" value="Noble">
+<p>You are proficient for checks in History and Persuasion</p>
+<input type="hidden" name="skill" value="History">
+<input type="hidden" name="skill" value="Persuasion">
+<p>You are proficient with gaming sets and a language of your choice.</p>
+<input type="hidden" name="prof[tools]" value="Gaming Set">
+<select 
+  ng-options="languages as languages for languages in ctrl.languages track by languages"
+  ng-model="ctrl.bgLanguages"
+  name="prof[lang]"
+  >
+</select>
+<p>You start with the following equipment: A set of fine clothes, a signet ring, a scroll of pedigree, and 25 gold.</p>
+<input type="hidden" name="equip[gen]" placeholder="Signet Ring">
+<input type="hidden" name="equip[gen]" placeholder="Scroll of Pedigree">
+<input type="hidden" name="equip[clothes]" value="Fine Clothes">
+<input type="hidden" name="equip[gold]" value="25">
+<p>You gain the background feature "Position of Privilege": Thanks to your noble birth, people are inclined to
+think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to.</p>
+<input type="hidden" name="features" value="Position of Privilege">

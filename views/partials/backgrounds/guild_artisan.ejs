@@ -1,16 +1,25 @@
 <p>You are an Guild Artisan</p>
 <input type="hidden" name="char_background" value="Guild Artisan">
-<p>You are proficient for checks in Animal Handling and Survival</p>
-<input type="hidden" name="skill" value="Animal Handling">
-<input type="hidden" name="skill" value="Survival">
-<p>You are proficient with both Artisan's tools and land vehicles.</p>
+<p>You are proficient for checks in Insight and Persuasion</p>
+<input type="hidden" name="skill" value="Insight">
+<input type="hidden" name="skill" value="Persuasion">
+<p>You are proficient with Artisan's tools and a language of your choice.</p>
 <input type="hidden" name="prof[tools]" value="Artisan's Tools">
-<input type="hidden" name="prof[tools]" placeholder="Land Vehicles">
-<p>You start with the following equipment: A set of artisan's tools, a shovel, an iron pot, a set of common clothes and 10 gold.</p>
+<select 
+  ng-options="languages as languages for languages in ctrl.languages track by languages"
+  ng-model="ctrl.bgLanguages"
+  name="prof[lang]"
+  >
+</select>
+<p>You start with the following equipment: A set of artisan's tools, letter of introduction from your guild, traveler's clothes and 10 gold.</p>
 <input type="text" name="equip[tools]" placeholder="Artisan's Tools">
-<input type="text" name="equip[gen]" placeholder="Shovel">
-<input type="text" name="equip[gen]" placeholder="Iron Pot">
-<input type="hidden" name="equip[clothes]" value="Common Clothes">
-<input type="hidden" name="equip[gold]" value="10">
-<p>You gain the background feature "By Popular Demand": You can always find a place to perform, at such a place you recieve free lodging and food of a modest or comforttable standard. When people who have seen you perform see you, they recognize you.</p>
-<input type="hidden" name="features" value="By Popular Demand">
+<input type="text" name="equip[gen]" placeholder="Letter of Guild Introduction">
+<input type="hidden" name="equip[clothes]" value="Traveler's Clothes">
+<input type="hidden" name="equip[gold]" value="15">
+<p>You gain the background feature "Guild Membership": As an established and respected member of a guild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for your funeral if needed. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings.
+Guilds often wield tremendous political power. If
+you are accused of a crime, your guild will support you
+if a good case can be made for your innocence or the crime is justifiable. You can also gain access to powerful political figures through the guild, if you are a member in good standing. Such connections might require the donation of money or magic items to the guild’s coffers.
+You must pay dues of 5 gp per month to the guild. If you miss payments, you must make up back dues to remain in the guild’s good graces.
+</p>
+<input type="hidden" name="features" value="Guild Membership">

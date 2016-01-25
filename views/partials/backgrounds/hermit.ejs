@@ -1,0 +1,23 @@
+<p>You are a Hermit</p>
+<input type="hidden" name="char_background" value="Hermit">
+<p>You are proficient for checks in Medicine and Religion</p>
+<input type="hidden" name="skill" value="Medicine">
+<input type="hidden" name="skill" value="Religion">
+<p>You are proficient with both Herbalism Kits and a language of your choice.</p>
+<input type="hidden" name="prof[tools]" value="Herbalism Kit">
+<select 
+  ng-options="languages as languages for languages in ctrl.languages track by languages"
+  ng-model="ctrl.bgLanguages"
+  name="prof[lang]"
+  >
+</select>
+<p>You start with the following equipment: A scroll case stuffed full of notes from your studies, a winter blanket, a set of common clothes, an herbalism kit, and 5 gold.</p>
+<input type="hidden" name="equip[tools]" placeholder="Herbalism Kit">
+<input type="hidden" name="equip[gen]" placeholder="Case of Notes">
+<input type="hidden" name="equip[gen]" placeholder="Winter Blanket">
+<input type="hidden" name="equip[clothes]" value="Common Clothes">
+<input type="hidden" name="equip[gold]" value="5">
+<p>You gain the background feature "Discovery": The quiet seclusion of your extended hermitage gave you
+access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of your seclusion. It might be a great truth about the cosmos, the deities, the powerful beings of the outer planes, or the forces of nature. It could be a site that no one else has ever seen. You might have uncovered a fact that has long been forgotten, or unearthed some relic of the past that could rewrite history. It might be information that would be damaging to the people who or consigned you to exile, and hence the reason for your return to society.
+Work with your DM to determine the details of your discovery and its impact on the campaign.</p>
+<input type="hidden" name="features" value="Discovery">

@@ -1,0 +1,22 @@
+<p>You are an Outlander</p>
+<input type="hidden" name="char_background" value="Outlander">
+<p>You are proficient for checks in Athletics and Survival</p>
+<input type="hidden" name="skill" value="Athletics">
+<input type="hidden" name="skill" value="Survival">
+<p>You are proficient with a musical instrument and a language of your choice.</p>
+<input type="text" name="prof[tools]" placeholder="Musical Instrument">
+<select 
+  ng-options="languages as languages for languages in ctrl.languages track by languages"
+  ng-model="ctrl.bgLanguages"
+  name="prof[lang]"
+  >
+</select>
+<p>You start with the following equipment: A staff, a hunting trap, trophy from animal you killed, a set of traveler's clothes, and 10gp.</p>
+<input type="hidden" name="equip[gen]" placeholder="Staff">
+<input type="hidden" name="equip[gen]" placeholder="Hunting Trap">
+<input type="hidden" name="equip[gen]" placeholder="Trophy">
+<input type="hidden" name="equip[clothes]" value="Traveler's Clothes">
+<input type="hidden" name="equip[gold]" value="10">
+<p>You gain the background feature "Wanderer": You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game,water, and so forth.
+</p>
+<input type="hidden" name="features" value="Wanderer">
