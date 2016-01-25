@@ -1,0 +1,68 @@
+<p>As a Sorcerer, you start with 6 hit points.
+<input type="hidden" name="char_class" value="Sorcerer">
+<input type="hidden" name="hit_point_max" value="6">
+<p>You are proficient with Daggers, Darts, Slings, Quarterstaffs, and Light Crossbows.</p>
+<input type="hidden" name="prof[wep]" value="Light Crossbows">
+<input type="hidden" name="prof[wep]" value="Daggers">
+<input type="hidden" name="prof[wep]" value="Slings">
+<input type="hidden" name="prof[wep]" value="Quarterstaffs">
+<input type="hidden" name="prof[wep]" value="Darts">
+
+<p>You are proficient in saving throws of constitution and charisma.</p>
+<input type="hidden" name="skill" value="con_sav">
+<input type="hidden" name="skill" value="cha_sav">
+<p>Choose two of the following skills</p>
+<select 
+  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
+  ng-model="ctrl.charClassSkillsSelected"
+  name="skill"
+  multiple>
+</select>
+
+<p>You start with the following weapon</p>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_one track by weapon"
+  ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<p>You can choose between a dungeoneer's pack or an exploreers's pack</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_one track by option"
+  ng-model="ctrl.charOpt1Selected"
+  name="equip[gen]">
+<p>You can choose between a component pouch or an arcane focus</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_two track by option"
+  ng-model="ctrl.charOpt2Selected"
+  name="equip[gen]">
+</select>
+
+<p>You also start with two daggers</p>
+<input type="hidden" name="equip[wep]" value="Dagger(2)">
+<p>Spellcasting: as a Sorcerer you have access to magic. You start by knowing four cantrips (of which you can cast as many times as you want) two four first level spells. Of the first level spells you know, you are able to cast two spells (either the same one twice, or two spells once) between each long rest. You use your charisma modifier as your spellcasting ability. You are able to cast any spell you know with the ritual tag as a ritual (casting a spell as a ritual takes ten minutes to cast, but does not use up one of your slots.)</p>
+<input type="hidden" name="spellcasting_ability" value="cha">
+<input type="hidden" name="spell_save_dc" value="10">
+<input type="hidden" name="spell_attack_bonus" value="2">
+<p>Select 4 Cantrips from the list below</p>
+<select
+  ng-options="cantrip as cantrip for cantrip in ctrl.selectedCharClass.cantrips track by cantrip"
+  ng-model="ctrl.classCantrips"
+  name="cantrips"
+  multiple>
+</select>
+<p>Select 2 1st level spells from the list below</p>
+<select
+  ng-options="spell as spell for spell in ctrl.selectedCharClass.spells track by spell"
+  ng-model="ctrl.classFLSpells"
+  name="fLSpells"
+  multiple>
+</select>
+
+
+<p>You also gain the Sorcerous Origin ability, which will let you choose where you get your powers from, and will influence your character as it grows, along with giving it immediate benefits.</p>
+<select 
+  ng-options="origin as origin.name for origin in ctrl.origins track by origin.name"
+  ng-model="ctrl.selOrigin">
+</select>
+<p>Selected Origin: {{ctrl.selOrigin.name}}</p>
+<div ng-include="ctrl.selOrigin.path"></div>

@@ -14,10 +14,6 @@ app.get('/', function(req, res) {
   res.render('charcreator')
 });
 
-app.get('/partials/races', function(req, res){
-  res.render('partials/races')
-})
-
 app.get('/partials/charClasses/:name', function(req, res){
   res.render('partials/charClasses/'+req.params.name)
 })
@@ -31,6 +27,10 @@ app.get('/partials/backgrounds/:name', function(req, res){
 
 app.get('/partials/domains/:name', function(req, res){
   res.render('partials/domains/'+req.params.name)
+})
+
+app.get('/partials/origins/:name', function(req, res){
+  res.render('/partials/origins/'+req.params.name)
 })
 
 app.get('/list', function(req, res){
@@ -95,6 +95,20 @@ app.post('/create', function(req, res){
     req.body.hit_point_max = parseInt(req.body.hit_point_max) + calcAbilBonus(parseInt(req.body[req.body.selectedCon]))
   }
   calcHitPoints();
+  var calcSpellStats = function(){
+    switch(req.body.spellcasting_ability){
+      case "int":
+        req.body.spell_save_dc = parseInt(req.body.spell_save_dc) + calcAbilBonus(parseInt(req.body[req.body.selectedInt]));
+        req.body.spell_attack_bonus = parseInt(req.body.spell_attack_bonus) + calcAbilBonus(parseInt(req.body[req.body.selectedInt]));
+      case "wis":
+        req.body.spell_save_dc = parseInt(req.body.spell_save_dc) + calcAbilBonus(parseInt(req.body[req.body.selectedWis]));
+        req.body.spell_attack_bonus = parseInt(req.body.spell_attack_bonus) + calcAbilBonus(parseInt(req.body[req.body.selectedWis]));
+      case "cha":
+        req.body.spell_save_dc = parseInt(req.body.spell_save_dc) + calcAbilBonus(parseInt(req.body[req.body.selectedCha]));
+        req.body.spell_attack_bonus = parseInt(req.body.spell_attack_bonus) + calcAbilBonus(parseInt(req.body[req.body.selectedCha]));
+    }
+  }
+  calcSpellStats()
   var combineRace = function(){
     if(Array.isArray(req.body.char_race)){
       var result = req.body.char_race.join(", ")

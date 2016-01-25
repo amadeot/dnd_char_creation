@@ -1,15 +1,15 @@
-<p>As a Paladin, you start with 8 hit points plus your constitution modifier.
+<p>As a Paladin, you start with 10 hit points plus your constitution modifier.
 <input type="hidden" name="char_class" value="Paladin">
-<input type="hidden" name="hit_point_max" value="8">
-<p>You are proficient with simple weapons and short swords.</p>
+<input type="hidden" name="hit_point_max" value="10">
+<p>You are proficient in all armor and shields.</p>
+<input type="hidden" name="prof[armor]" value="All Armor">
+<input type="hidden" name="prof[armor]" value="Shields">
+<p>You are proficient with simple and martial weapons.</p>
 <input type="hidden" name="prof[wep]" value="simple weapons">
-<input type="hidden" name="prof[wep]" value="Shortswords">
-<p>You are proficient in a type of Artisan tools, or musical instrument. Common Artisan's tools include: Alchemist, Brewer, Calligrapher, Carpenter, Cartographer, Cobbler, Cook, Glassblower, Jeweler, Leatherworker, Mason, Painter, Potter, Smith, Tinker, Weaver, and Woodcarver</p>
-<input type="text" name="prof[tools]">
-
-<p>You are proficient in saving throws of strength and dexterity.</p>
-<input type="hidden" name="skill" value="str_sav">
-<input type="hidden" name="skill" value="dex_sav">
+<input type="hidden" name="prof[wep]" value="martial weapons">
+<p>You are proficient in saving throws of wisdom and charisma.</p>
+<input type="hidden" name="skill" value="wis_sav">
+<input type="hidden" name="skill" value="cha_sav">
 <p>Choose two of the following skills</p>
 <select 
   ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
@@ -19,8 +19,18 @@
 </select>
 <p>You start with the following weapons</p>
 <select
-  ng-options="wep1 as wep1 for wep1 in ctrl.selectedCharClass.wep_one track by wep1"
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_one track by weapon"
   ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="weapon2 as weapon2 for weapon2 in ctrl.selectedCharClass.wep_two track by weapon2"
+  ng-model="ctrl.charWep2Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="weapon3 as weapon3 for weapon3 in ctrl.selectedCharClass.wep_three track by weapon3"
+  ng-model="ctrl.charWep3Selected"
   name="equip[wep]"
 ></select>
 
@@ -31,13 +41,12 @@
   name="equip[gen]"
 ></select>
 
-<p>You also start with 10 darts</p>
-<input type="hidden" name="equip[wep]" value="10 Darts">
+<p>You also start with Chain Mail and a Holy Symbol</p>
+<input type="hidden" name="equip[armor]" value="Chain Mail">
+<input type="hidden" name="equip[gen]" value="Holy Symbol">
 
-<p>As a Paladin, you have the ability Unarmored Defence, meaning while you are wearing no armor and not wielding a shield, your Armor Class is 10 + your dexterity modifier + your wisdom modifier</p>
-<input type="hidden" name="features", value="Unarmored Defense">
+<p>As a Paladin, you have the ability Divine Sense, meaning whenever you want you can open your awareness to detect good and evil, and until the next turn you will know the location of any celestial, fiend, undead within 60 feet of you. You are also aware of any presence of any object that has been consecrated or desecrated. You can do this as many times as 1+ your charisma modifier. You regain your uses at the end of a long rest.</p>
+<input type="hidden" name="features", value="Divine Sense">
 
-<p>You also have the ability Martial arts, giving you a mastery of combat styles that use unarmed strikes and Paladin weapons, which are Shortswords and any simple weapon that doesn't have the two-handed or heavy property. You gain the following benefits while you are unarmored and wielding a monke weapon:
-
-You can use dexterity instead of strength for attack and damage rolls. You can roll a d4 instead for an unarmed strike. You can make an extra unarmed strike as a bonus action.</p>
-<input type="hidden" name="features" value="Martial Arts">
+<p>You also have the ability Lay on Hands, letting you heal with your touch. You can restore a total number of hit points equal to your paladin level times 5. You can touch any creature and restore hit points up to the total you have. You can restore this with a long rest</p>
+<input type="hidden" name="features" value="Lay on Hands">

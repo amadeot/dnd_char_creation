@@ -1,0 +1,61 @@
+<p>As a Ranger, you start with 10 hit points plus your constitution modifier.
+<input type="hidden" name="char_class" value="Ranger">
+<input type="hidden" name="hit_point_max" value="10">
+<p>You are proficient in all armor and shields.</p>
+<input type="hidden" name="prof[armor]" value="All Armor">
+<input type="hidden" name="prof[armor]" value="Shields">
+<p>You are proficient with simple and martial weapons.</p>
+<input type="hidden" name="prof[wep]" value="simple weapons">
+<input type="hidden" name="prof[wep]" value="martial weapons">
+<p>You are proficient in saving throws of strength and dexterity.</p>
+<input type="hidden" name="skill" value="str_sav">
+<input type="hidden" name="skill" value="dex_sav">
+<p>Choose three of the following skills</p>
+<select 
+  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
+  ng-model="ctrl.charClassSkillsSelected"
+  name="skill"
+  multiple>
+</select>
+<p>You start with the following armor and weapons</p>
+<select
+  ng-options="armor as armor for armor in ctrl.selectedCharClass.armor track by armor"
+  ng-model="ctrl.charArmorSelected"
+  name="equip[armor]"
+></select>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_one track by weapon"
+  ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<select
+  ng-options="weapon2 as weapon2 for weapon2 in ctrl.selectedCharClass.wep_two track by weapon2"
+  ng-model="ctrl.charWep3Selected"
+  name="equip[wep]"
+></select>
+
+<p>You also start with the one of these packs</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_one track by option"
+  ng-model="ctrl.charOpt1Selected"
+  name="equip[gen]"
+></select>
+
+<p>You also start with a longbow</p>
+<input type="hidden" name="equip[wep]" value="Longbow">
+
+<p>As a Ranger, you have the ability Favored Enemy. Choose a type of enemy below, and you have advantage on Survival checks to track your favored enemies, as well as Intelligence checks to recall information about them. You also learn a language that is spoken by your favored enemy, if any.</p>
+<input type="hidden" name="features", value="Favored Enemy">
+<select
+  ng-options="enemy as enemy for enemy in ctrl.selectedCharClass.favored_enemies track by enemy"
+  ng-model="ctrl.charEnemySelected"
+  name="features"
+></select>
+
+<p>You also have the ability Natural Explorer, which gives you advantage to Inteligence and Wisdom checks related to your terrain. It also gives you bonuses when moving through it, such as not having difficult terrain not slowing your group's travel, constantly being aware of danger, moving stealthily at a normal pace, finding twice as much food when you forage, and gain more knowledge when tracking creatures. Choose a favored terrain below.</p>
+<input type="hidden" name="features" value="Natural Explorer">
+<select
+  ng-options="enemy as enemy for enemy in ctrl.selectedCharClass.favored_terrain track by enemy"
+  ng-model="ctrl.charTerrSelected"
+  name="features"
+></select>
