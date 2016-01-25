@@ -1,0 +1,64 @@
+<p>As a Wizard, you start with 6 hit points plus your constitution modifier.
+<input type="hidden" name="char_class" value="Wizard">
+<input type="hidden" name="hit_point_max" value="6">
+<p>You are proficient with Daggers, Darts, Slings, Quarterstaffs, and Light Crossbows.</p>
+<input type="hidden" name="prof[wep]" value="Light Crossbows">
+<input type="hidden" name="prof[wep]" value="Daggers">
+<input type="hidden" name="prof[wep]" value="Slings">
+<input type="hidden" name="prof[wep]" value="Quarterstaffs">
+<input type="hidden" name="prof[wep]" value="Darts">
+
+<p>You are proficient in saving throws of intelligence and wisdom.</p>
+<input type="hidden" name="skill" value="int_sav">
+<input type="hidden" name="skill" value="wis_sav">
+<p>Choose two of the following skills</p>
+<select 
+  ng-options="skills as skills for skills in ctrl.selectedCharClass.possible_skills track by skills"
+  ng-model="ctrl.charClassSkillsSelected"
+  name="skill"
+  multiple>
+</select>
+
+<p>You start with the following weapon</p>
+<select
+  ng-options="weapon as weapon for weapon in ctrl.selectedCharClass.wep_one track by weapon"
+  ng-model="ctrl.charWep1Selected"
+  name="equip[wep]"
+></select>
+<p>You can choose between a scholar's pack or an explorer's pack</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_one track by option"
+  ng-model="ctrl.charOpt1Selected"
+  name="equip[gen]">
+<p>You can choose between a component pouch or an arcane focus</p>
+<select
+  ng-options="option as option for option in ctrl.selectedCharClass.opt_two track by option"
+  ng-model="ctrl.charOpt2Selected"
+  name="equip[gen]">
+</select>
+
+<p>You also start with a spellbook</p>
+<input type="hidden" name="equip[gen]" value="Spellbook">
+<p>Spellcasting: as a Wizard you have access to magic. You start by knowing three cantrips (of which you can cast as many times as you want) and six first level spells. Of the first level spells you know, you are able to cast two spells (either the same one twice, or two spells once) between each long rest. All the spells you know are written in your spellbook, and you will be able to copy spells into it as the game progresses. You need to prepare your spells after a long rest by studying your spellbook, and the process takes an hour. You use your intelligence modifier as your spellcasting ability. You are able to cast any spell you know with the ritual tag as a ritual (casting a spell as a ritual takes ten minutes to cast, but does not use up one of your slots.)</p>
+<input type="hidden" name="spellcasting_ability" value="int">
+<input type="hidden" name="spell_save_dc" value="10">
+<input type="hidden" name="spell_attack_bonus" value="2">
+<p>Select 3 Cantrips from the list below to copy into your spellbook.</p>
+<select
+  ng-options="cantrip as cantrip for cantrip in ctrl.selectedCharClass.cantrips track by cantrip"
+  ng-model="ctrl.classCantrips"
+  name="cantrips"
+  multiple>
+</select>
+<p>Select 6 1st level spells from the list below to copy into your spellbook.</p>
+<select
+  ng-options="spell as spell for spell in ctrl.selectedCharClass.spells track by spell"
+  ng-model="ctrl.classFLSpells"
+  name="fLSpells"
+  multiple>
+</select>
+
+
+<p>You also gain the Arcane Recovery ability, which allows you to regain spells equal to your half your wizard level, rounded up, after a short rest.</p>
+<input type="hidden" name="features" value="Arcane Recovery">
+
