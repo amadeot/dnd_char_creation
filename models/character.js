@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/dnd');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/dnd');
 
 var dndSchema = mongoose.Schema({
   char_name: String,
