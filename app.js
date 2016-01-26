@@ -11,8 +11,12 @@ app.use(express.static(__dirname));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  res.render('charcreator')
+  res.render('index')
 });
+
+app.get('/create', function(req, res){
+  res.render('charcreator')
+})
 
 app.get('/partials/charClasses/:name', function(req, res){
   res.render('partials/charClasses/'+req.params.name)

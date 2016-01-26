@@ -16,7 +16,7 @@
       <i class="add user icon"></i>
       Let's make a Character!
     </h4>
-    <p>Before we start, take a while and try to imagine the type of character you want to be in broad strokes.</p>
+
     <h4 class="ui horizontal divider header">
       <i class="settings icon"></i>
       Ready?
@@ -25,12 +25,6 @@
       
     </table>
     <form method="post" action="/create">
-      <div ui section divider>
-        <input name="charName" type="text" placeholder="Character Name">
-        <input name="playerName" type="text" placeholder="Player Name">
-        <input name="playerEmail" type="text" placeholder="Player Email">
-        <input name="alignment" type="text" placeholder="Alignment">
-      </div>
 
       <div class="race-container">
         <h1>Race</h1>
@@ -135,7 +129,13 @@
               <div ng-include="ctrl.selectedBackground.path"></div>
           </div>
         </div>
-
+        
+      <div ui section divider>
+        <input name="charName" type="text" placeholder="Character Name">
+        <input name="playerName" type="text" placeholder="Player Name">
+        <input name="playerEmail" type="text" placeholder="Player Email">
+        <input name="alignment" type="text" placeholder="Alignment">
+      </div>
 
       <input type="submit" value="Create Character!">     
     </form>
