@@ -9,6 +9,7 @@ var dndSchema = mongoose.Schema({
   char_class: String,
   char_background: String,
   skill_proficiencies: Array,
+  alignment: String,
   str: Number,
   str_bonus: Number,
   dex: Number,

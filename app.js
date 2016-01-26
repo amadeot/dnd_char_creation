@@ -30,9 +30,9 @@ app.get('/partials/domains/:name', function(req, res){
 })
 
 app.get('/show/:_id', function(req, res){
-  Character.findOne({ '_id': req.params._id }, {}, function (err, person) {
+  Character.findOne({ '_id': req.params._id }, {}, function (err, character) {
   if (err) return handleError(err);
-  res.send(person)
+  res.render('show', {character})
   })
 })
 
@@ -119,6 +119,7 @@ app.post('/create', function(req, res){
     char_name: req.body.charName,
     player_name: req.body.playerName,
     player_email: req.body.playerEmail,
+    alignment: req.body.alignment,
     char_race: req.body.char_race,
     char_class: req.body.char_class,
     char_background: req.body.char_background,
