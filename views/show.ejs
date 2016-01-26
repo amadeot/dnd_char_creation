@@ -63,7 +63,10 @@
       </li>
     <%}%>
   </ul>
-  <%if(character.profs_and_langs.tools){%>
+
+
+
+  <%if(Array.isArray(character.profs_and_langs.tools)){%>
     <p>Tools:</p>
     <ul>
       <% for(var i=0;i<character.profs_and_langs.tools.length;i++){ %>
@@ -72,7 +75,11 @@
         </li>
       <%}%>
     </ul>
+  <%} else if(character.profs_and_langs.tools){%>
+    <p>Tools: <%=character.profs_and_langs.tools%></p>
   <%}%>
+
+
   <p>Weapons:</p>
   <ul>
     <% for(var i=0;i<character.profs_and_langs.wep.length;i++){ %>
@@ -81,7 +88,8 @@
       </li>
     <%}%>
   </ul>
-  <%if(character.profs_and_langs.armor){%>
+
+  <%if(Array.isArray(character.profs_and_langs.armor)){%>
     <p>Armor:</p>
     <ul>
       <% for(var i=0;i<character.profs_and_langs.armor.length;i++){ %>
@@ -90,18 +98,27 @@
         </li>
       <%}%>
     </ul>
+  <%} else if(character.profs_and_langs.armor){%>
+    <p>Armor: <%=character.profs_and_langs.armor%></p>
   <%}%>
-  <p>Equipment:</p>
-  <p>Weapons:</p>
-  <ul>
-    <% for(var i=0;i<character.equipment.wep.length;i++){ %>
-      <li>
-        <%= character.equipment.wep[i]%>
-      </li>
-    <%}%>
-  </ul>
 
-  <%if(character.equipment.armor){%>
+
+
+  <p>Equipment:</p>
+  <%if(Array.isArray(character.equipment.wep)){%>
+    <p>Weapons:</p>
+    <ul>
+      <% for(var i=0;i<character.equipment.wep.length;i++){ %>
+        <li>
+          <%= character.equipment.wep[i]%>
+        </li>
+      <%}%>
+    </ul>
+  <%}else{%>
+    <p>Weapon: <%= character.equipment.wep%></p>
+  <%}%>
+
+  <%if(Array.isArray(character.equipment.armor)){%>
     <p>Armor:</p>
     <ul>
       <% for(var i=0;i<character.equipment.armor.length;i++){ %>
@@ -110,6 +127,8 @@
         </li>
       <%}%>
     </ul>
+  <%}else if(character.equipment.armor){%>
+    <p>Armor: <%= character.equipment.armor%></p>
   <%}%>
 
   <%if(Array.isArray(character.equipment.clothes)){%>
@@ -125,16 +144,14 @@
     <p>Clothes: <%= character.equipment.clothes%></p>
   <%}%>
 
-  <%if(character.equipment.gen){%>
-    <p>General Equipment:</p>
-    <ul>
-      <% for(var i=0;i<character.equipment.gen.length;i++){ %>
-        <li>
-          <%= character.equipment.gen[i]%>
-        </li>
-      <%}%>
-    </ul>
-  <%}%>
+  <p>General Equipment:</p>
+  <ul>
+    <% for(var i=0;i<character.equipment.gen.length;i++){ %>
+      <li>
+        <%= character.equipment.gen[i]%>
+      </li>
+    <%}%>
+  </ul>
 
   Gold: <%= character.equipment.gold%>
 
@@ -149,23 +166,23 @@
     </ul>
   <%}%>
 
-  <%if(character.spells){%>
+  <%if(character.first_level_spells!=0){%>
     <p>Spells:</p>
     <ul>
-      <% for(var i=0;i<character.spells.length;i++){ %>
+      <% for(var i=0;i<character.first_level_spells.length;i++){ %>
         <li>
           <%= character.spells[i]%>
         </li>
       <%}%>
     </ul>
     <p>
-    Spellcasting Ability: <%=character.spellcasting_ability %>
+      Spellcasting Ability: <%=character.spellcasting_ability %>
     </p>
     <p>
-    Spell Save DC: <%=character.spell_save_dc %>
+      Spell Save DC: <%=character.spell_save_dc %>
     </p>
     <p>
-    Spellcasting Bonus: <%=character.spell_attack_bonus %>
+      Spellcasting Bonus: <%=character.spell_attack_bonus %>
     </p>
 
   <%}%>
