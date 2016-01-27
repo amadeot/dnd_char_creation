@@ -12,6 +12,8 @@
   <title>Your Character</title>
 </head>
 <body>
+  <div></div>
+
   <p>Character Name: <%= character.char_name %></p>
   <p>Class: <%= character.char_class %></p>
   <p>Background: <%= character.char_background %></p>
@@ -63,9 +65,6 @@
       </li>
     <%}%>
   </ul>
-
-
-
   <%if(Array.isArray(character.profs_and_langs.tools)){%>
     <p>Tools:</p>
     <ul>
@@ -78,8 +77,6 @@
   <%} else if(character.profs_and_langs.tools){%>
     <p>Tools: <%=character.profs_and_langs.tools%></p>
   <%}%>
-
-
   <p>Weapons:</p>
   <ul>
     <% for(var i=0;i<character.profs_and_langs.wep.length;i++){ %>

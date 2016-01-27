@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Your Character!</title>
+  <link rel="stylesheet" type="text/css" href="/show.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="grid-1-3">
+        <h1 class="char-name"><%= character.char_name %></h1>
+      </div>
+      <div class="top-content info-box grid-2-3">
+        <div class="grid-1-3">
+          <p>Class: 
+          <%= character.char_class %></p>
+          <p>Race:  
+          <%= character.char_race %></p>
+        </div>
+        <div class="grid-1-3">
+          <p>Background:  
+          <%= character.char_background %></p>
+          <p>Alignment:  
+          <%= character.alignment %></p>
+        </div>
+        <div class="grid-1-3">
+          <p>Player Name: 
+          <%= character.player_name %></p>
+          <p>Player Email:
+          <%= character.player_email %></p>
+        </div>
+      </div>
+    </header>
+    <div class="main-content">
+      <div class="grid-1-3">
+        <div class="info-box">
+          <div class="stat-container">
+            <div class="stat">
+              <p>Strength: <%= character.str %></p>
+              <p>Strength Modifier: <%= character.str_bonus %></p>
+            </div>
+            <div class="stat">
+              <p>Dexterity: <%= character.dex %></p>
+              <p>Dexterity Modifier: <%= character.dex_bonus%></p>
+            </div>
+            <div class="stat">
+              <p>Constitution: <%= character.con %></p>
+              <p>Constitution Modifier: <%= character.con_bonus%></p>              
+            </div>
+            <div class="stat">
+              <p>Intelligence: <%= character.int %></p>
+              <p>Intelligence Modifier: <%= character.int_bonus%></p>             
+            </div>
+            <div class="stat">
+              <p>Wisdom: <%= character.wis %></p>
+              <p>Wisdom Modifier: <%= character.wis_bonus%></p>              
+            </div>
+            <div class="stat">
+              <p>Charisma: <%= character.cha %></p>
+              <p>Charisma Modifier: <%= character.cha_bonus%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-1-3">
+        <div class="info-box">
+          <p>Armor Class: <%= character.armor_class %></p>
+          <p>Initiative: +<%= character.initiative %></p>
+          <p>Hit Point Max: <%= character.hit_point_max %></p>
+          <p>Speed: <%= character.speed %></p>
+
+        </div>
+        <div class="info-box">
+          <p>Proficiencies: </p>
+          <ul> 
+            <li>Languages:
+              <ul>
+                <% for(var i=0;i<character.profs_and_langs.lang.length;i++){ %>
+                  <li>
+                    <%= character.profs_and_langs.lang[i]%>
+                  </li>
+                <%}%>
+              </ul>
+            </li>
+            <%if(Array.isArray(character.profs_and_langs.tools)){%>
+              <li>Tools:
+                <ul>
+                  <% for(var i=0;i<character.profs_and_langs.tools.length;i++){ %>
+                    <li>
+                      <%= character.profs_and_langs.tools[i]%>
+                    </li>
+                  <%}%>
+                </ul>
+              <%} else if(character.profs_and_langs.tools){%>
+                <p>Tools: <%=character.profs_and_langs.tools%></p>
+              <%}%>
+            </li>
+            <li>Weapons:
+              <ul>
+                <% for(var i=0;i<character.profs_and_langs.wep.length;i++){ %>
+                  <li>
+                    <%= character.profs_and_langs.wep[i]%>
+                  </li>
+                <%}%>
+              </ul>
+            </li>
+            <li>
+              <%if(Array.isArray(character.profs_and_langs.armor)){%>
+                <p>Armor:</p>
+                <ul>
+                  <% for(var i=0;i<character.profs_and_langs.armor.length;i++){ %>
+                    <li>
+                      <%= character.profs_and_langs.armor[i]%>
+                    </li>
+                  <%}%>
+                </ul>
+              <%} else if(character.profs_and_langs.armor){%>
+                <p>Armor: <%=character.profs_and_langs.armor%></p>
+              <%}%>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-1-3">
+        <div class="info-box">
+          <p>Features and Traits:</p>
+          <ul>
+            <% for(var i=0;i<character.features.length;i++){ %>
+            <li>
+              <%= character.features[i]%>
+            </li>
+            <%}%>
+          </ul>
+        </div>
+        <div class="info-box">
+          <p>Spellcasting:</p>
+          <%if(character.cantrips.length!=0){%>
+          <p>Cantrips:</p>
+          <ul>
+            <% for(var i=0;i<character.cantrips.length;i++){ %>
+              <li>
+                <%= character.cantrips[i]%>
+              </li>
+            <%}%>
+          </ul>
+        <%}%>
+        <%if(character.first_level_spells!=0){%>
+          <p>Spells:</p>
+          <ul>
+            <% for(var i=0;i<character.first_level_spells.length;i++){ %>
+              <li>
+                <%= character.first_level_spells[i]%>
+              </li>
+            <%}%>
+          </ul>
+          <p>
+            Spellcasting Ability: <%=character.spellcasting_ability %>
+          </p>
+          <p>
+            Spell Save DC: <%=character.spell_save_dc %>
+          </p>
+          <p>
+            Spellcasting Bonus: <%=character.spell_attack_bonus %>
+          </p>
+
+        <%}%>
+
+        </div>
+      </div>
+    </div>
+    <div class="bottom-content">
+        <div class="grid-1-3">
+          <div class="info-box">
+            <p>Equipment:</p>
+            <%if(Array.isArray(character.equipment.wep)){%>
+              <p>Weapons:</p>
+              <ul>
+                <% for(var i=0;i<character.equipment.wep.length;i++){ %>
+                  <li>
+                    <%= character.equipment.wep[i]%>
+                  </li>
+                <%}%>
+              </ul>
+            <%}else{%>
+              <p>Weapon: <%= character.equipment.wep%></p>
+            <%}%>
+
+            <%if(Array.isArray(character.equipment.armor)){%>
+              <p>Armor:</p>
+              <ul>
+                <% for(var i=0;i<character.equipment.armor.length;i++){ %>
+                  <li>
+                    <%= character.equipment.armor[i]%>
+                  </li>
+                <%}%>
+              </ul>
+            <%}else if(character.equipment.armor){%>
+              <p>Armor: <%= character.equipment.armor%></p>
+            <%}%>
+          </div>
+        </div>
+        <div class="grid-2-3">
+          <div class="info-box">
+            <%if(Array.isArray(character.equipment.clothes)){%>
+              <p>Clothes:</p>
+              <ul>
+                <% for(var i=0;i<character.equipment.clothes.length;i++){ %>
+                  <li>
+                    <%= character.equipment.clothes[i]%>
+                  </li>
+                <%}%>
+              </ul>
+            <%} else if(character.equipment.clothes){%>
+              <p>Clothes: <%= character.equipment.clothes%></p>
+            <%}%>
+            <%if(Array.isArray(character.equipment.tools)){%>
+              <p>Tools:</p>
+              <ul>
+                <% for(var i=0;i<character.equipment.tools.length;i++){ %>
+                  <li>
+                    <%= character.equipment.tools[i]%>
+                  </li>
+                <%}%>
+              </ul>
+            <%} else if(character.equipment.tools){%>
+              <p>Tools: <%= character.equipment.tools%></p>
+            <%}%>
+            <p>General Equipment:</p>
+            <ul>
+              <% for(var i=0;i<character.equipment.gen.length;i++){ %>
+                <li>
+                  <%= character.equipment.gen[i]%>
+                </li>
+              <%}%>
+            </ul>
+            <p>Gold: <%= character.equipment.gold%></p>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

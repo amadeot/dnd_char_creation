@@ -36,7 +36,7 @@ app.get('/partials/domains/:name', function(req, res){
 app.get('/show/:_id', function(req, res){
   Character.findOne({ '_id': req.params._id }, {}, function (err, character) {
   if (err) return handleError(err);
-  res.render('show', {character})
+  res.render('template', {character})
   })
 })
 
