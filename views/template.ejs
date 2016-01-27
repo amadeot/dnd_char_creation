@@ -96,14 +96,19 @@
                 <p>Tools: <%=character.profs_and_langs.tools%></p>
               <%}%>
             </li>
-            <li>Weapons:
-              <ul>
-                <% for(var i=0;i<character.profs_and_langs.wep.length;i++){ %>
-                  <li>
-                    <%= character.profs_and_langs.wep[i]%>
-                  </li>
-                <%}%>
-              </ul>
+            <li>
+              <%if(Array.isArray(character.profs_and_langs.wep)){%>
+                <p>Weapons:</p>
+                <ul>
+                  <% for(var i=0;i<character.profs_and_langs.wep.length;i++){ %>
+                    <li>
+                      <%= character.profs_and_langs.wep[i]%>
+                    </li>
+                  <%}%>
+                </ul>
+              <%}else{%>
+                <p>Weapons: <%= character.profs_and_langs.wep%></p>
+              <%}%>            
             </li>
             <li>
               <%if(Array.isArray(character.profs_and_langs.armor)){%>
