@@ -1,0 +1,13 @@
+div {
+  border: 2px solid black;
+  width: 70%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 25px;
+  text-indent: 10px;
+
+}
+
+html{
+  background-image: url(/dragon.jpg);
+}
